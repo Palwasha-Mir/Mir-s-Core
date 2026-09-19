@@ -809,14 +809,29 @@
 </html>
 <script>
     window.addEventListener('DOMContentLoaded', function () {
-        // Naye logo ki file ka exact naam yahan set kiya gaya hai
         const logoFileName = "gym logo.jpeg";
 
-        // Header aur Footer ke logo containers ko target karke naya image tag insert karna
+        // 1. Header aur Footer ke logo containers ko update karna
         const logoContainers = document.querySelectorAll('header button .w-12.h-12, footer .w-10.h-10');
-        
         logoContainers.forEach(container => {
             container.innerHTML = `<img src="${logoFileName}" alt="Mir's Core Logo" class="w-full h-full object-cover rounded-full">`;
         });
+
+        // 2. Header wale logo button par click event par popup/lightbox mein naya logo set karna
+        const headerLogoBtn = document.querySelector('header button');
+        if (headerLogoBtn) {
+            headerLogoBtn.addEventListener('click', function () {
+                // Thoda wait karke modal ki image ko target karna taake modal khulne par purani image na dikhe
+                setTimeout(() => {
+                    const modalImages = document.querySelectorAll('#lightbox-modal img, .fixed img, div[class*="fixed"] img');
+                    modalImages.forEach(img => {
+                        // Agar image logo se milti julti hai ya modal ke andar hai
+                        if (!img.src.includes('unsplash') && !img.closest('.product-card')) {
+                            img.src = logoFileName;
+                        }
+                    });
+                }, 50);
+            });
+        }
     });
 </script>
