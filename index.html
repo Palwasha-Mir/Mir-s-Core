@@ -17,13 +17,16 @@
                 extend: {
                     colors: {
                         luxury: {
-                            dark: '#0a0a0a',
-                            card: '#121212',
-                            border: '#262626',
-                            gold: '#d4af37',
-                            champagne: '#e6c594',
-                            lightGold: '#f4e4bc',
-                            muted: '#a3a3a3'
+                            bg: '#fcfbfa',
+                            surface: '#ffffff',
+                            card: '#f4f2ee',
+                            border: '#e6dfd5',
+                            darkText: '#111111',
+                            mutedText: '#666666',
+                            gold: '#c5a059',
+                            roseGold: '#b76e79',
+                            champagne: '#dfc29c',
+                            darkGold: '#997a38'
                         }
                     },
                     fontFamily: {
@@ -37,20 +40,20 @@
     
     <style>
         .gold-gradient-text {
-            background: linear-gradient(135deg, #f4e4bc 0%, #d4af37 50%, #aa7c11 100%);
+            background: linear-gradient(135deg, #c5a059 0%, #b76e79 50%, #997a38 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .gold-gradient-bg {
-            background: linear-gradient(135deg, #e6c594 0%, #d4af37 50%, #aa7c11 100%);
+            background: linear-gradient(135deg, #dfc29c 0%, #c5a059 50%, #997a38 100%);
         }
-        .gold-border {
-            border-image: linear-gradient(to bottom right, #d4af37, #262626) 1;
+        .rose-gold-accent {
+            color: #b76e79;
         }
         .luxury-glass {
-            background: rgba(18, 18, 18, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(252, 251, 250, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
         .product-card:hover .product-img {
             transform: scale(1.05);
@@ -60,193 +63,198 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #0a0a0a;
+            background: #fcfbfa;
         }
         ::-webkit-scrollbar-thumb {
-            background: #333;
+            background: #dfc29c;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #d4af37;
+            background: #c5a059;
         }
     </style>
 </head>
-<body class="bg-luxury-dark text-gray-100 font-sans antialiased selection:bg-luxury-gold selection:text-black">
+<body class="bg-luxury-bg text-luxury-darkText font-sans antialiased selection:bg-luxury-gold selection:text-white">
 
     <!-- Header / Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 luxury-glass border-b border-luxury-border transition-all duration-300">
+    <header class="fixed top-0 left-0 right-0 z-50 luxury-glass border-b border-luxury-border transition-all duration-300 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
             
             <!-- Brand Logo -->
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-14 h-14 rounded-full border border-luxury-gold/50 flex items-center justify-center bg-black overflow-hidden shadow-[0_0_15px_rgba(212,175,55,0.2)]">
-                    <!-- Embedded Official Logo from user prompt -->
+                <div class="w-12 h-12 rounded-full border border-luxury-gold/60 flex items-center justify-center bg-white overflow-hidden shadow-md">
+                    <!-- User Provided Logo URL -->
                     <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=200&auto=format&fit=crop" alt="Mir's Core Logo Emblem" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                 </div>
                 <div>
                     <span class="font-heading font-extrabold text-xl sm:text-2xl tracking-wider gold-gradient-text block">MIR'S CORE</span>
-                    <span class="text-[10px] tracking-[0.25em] text-luxury-muted uppercase block font-medium">B2B Luxury Manufacturing</span>
+                    <span class="text-[9px] tracking-[0.25em] text-luxury-mutedText uppercase block font-medium">B2B Luxury Manufacturing</span>
                 </div>
             </a>
 
             <!-- Desktop Nav Links -->
             <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
-                <a href="#home" class="text-gray-300 hover:text-luxury-gold transition-colors">Home</a>
-                <a href="#catalog" class="text-gray-300 hover:text-luxury-gold transition-colors">Catalog</a>
-                <a href="#kids-catalog" class="text-gray-300 hover:text-luxury-gold transition-colors">Youth & Kids (7-15Y)</a>
-                <a href="#customization" class="text-gray-300 hover:text-luxury-gold transition-colors">Customization & MOQ</a>
-                <a href="#about" class="text-gray-300 hover:text-luxury-gold transition-colors">About Us</a>
+                <a href="#home" class="text-luxury-darkText hover:text-luxury-gold transition-colors">Home</a>
+                <a href="#catalog" class="text-luxury-darkText hover:text-luxury-gold transition-colors">Adult Collection</a>
+                <a href="#youth-catalog" class="text-luxury-darkText hover:text-luxury-gold transition-colors">Youth & Kids (7-16Y)</a>
+                <a href="#customization" class="text-luxury-darkText hover:text-luxury-gold transition-colors">Customization & MOQ</a>
+                <a href="#about" class="text-luxury-darkText hover:text-luxury-gold transition-colors">About Us</a>
             </nav>
 
-            <!-- Action Button -->
-            <div class="hidden sm:flex items-center gap-4">
-                <a href="#inquiry" class="gold-gradient-bg text-black font-heading font-bold text-xs sm:text-sm uppercase tracking-wider px-6 py-3 rounded-full hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all transform hover:-translate-y-0.5">
+            <!-- Action Buttons -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="https://wa.me/923155239697" target="_blank" class="px-4 py-2.5 rounded-full border border-luxury-gold/60 text-luxury-gold hover:bg-luxury-gold hover:text-white transition-all text-xs font-semibold flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
+                </a>
+                <a href="#inquiry" class="gold-gradient-bg text-white font-heading font-bold text-xs sm:text-sm uppercase tracking-wider px-6 py-3 rounded-full hover:shadow-[0_4px_20px_rgba(197,160,89,0.4)] transition-all transform hover:-translate-y-0.5">
                     Request Quote
                 </a>
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="menu-btn" class="md:hidden text-luxury-gold text-2xl focus:outline-none">
+            <button id="menu-btn" class="md:hidden text-luxury-darkText text-2xl focus:outline-none">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
 
         <!-- Mobile Nav Drawer -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-24 left-0 w-full bg-luxury-dark border-b border-luxury-border px-6 py-6 space-y-4 shadow-2xl">
-            <a href="#home" class="block text-gray-300 hover:text-luxury-gold text-base font-medium">Home</a>
-            <a href="#catalog" class="block text-gray-300 hover:text-luxury-gold text-base font-medium">Catalog</a>
-            <a href="#kids-catalog" class="block text-gray-300 hover:text-luxury-gold text-base font-medium">Youth & Kids (7-15Y)</a>
-            <a href="#customization" class="block text-gray-300 hover:text-luxury-gold text-base font-medium">Customization & MOQ</a>
-            <a href="#about" class="block text-gray-300 hover:text-luxury-gold text-base font-medium">About Us</a>
-            <a href="#inquiry" class="block text-center gold-gradient-bg text-black font-heading font-bold text-sm uppercase tracking-wider px-6 py-3 rounded-full">
-                Request Quote
-            </a>
+        <div id="mobile-menu" class="hidden md:hidden absolute top-24 left-0 w-full bg-luxury-surface border-b border-luxury-border px-6 py-6 space-y-4 shadow-xl">
+            <a href="#home" class="block text-luxury-darkText hover:text-luxury-gold text-base font-medium">Home</a>
+            <a href="#catalog" class="block text-luxury-darkText hover:text-luxury-gold text-base font-medium">Adult Collection</a>
+            <a href="#youth-catalog" class="block text-luxury-darkText hover:text-luxury-gold text-base font-medium">Youth & Kids (7-16Y)</a>
+            <a href="#customization" class="block text-luxury-darkText hover:text-luxury-gold text-base font-medium">Customization & MOQ</a>
+            <a href="#about" class="block text-luxury-darkText hover:text-luxury-gold text-base font-medium">About Us</a>
+            <div class="pt-2 flex flex-col gap-3">
+                <a href="https://wa.me/923155239697" target="_blank" class="w-full text-center py-3 rounded-full border border-luxury-gold text-luxury-gold font-semibold text-sm">
+                    <i class="fa-brands fa-whatsapp"></i> Direct WhatsApp Connect
+                </a>
+                <a href="#inquiry" class="block text-center gold-gradient-bg text-white font-heading font-bold text-sm uppercase tracking-wider px-6 py-3 rounded-full">
+                    Request Quote
+                </a>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center pt-28 pb-20 overflow-hidden">
-        <!-- Background Ambient & Imagery -->
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=2000&auto=format&fit=crop" alt="Luxury Activewear Aesthetic" class="w-full h-full object-cover object-center opacity-30 scale-105 animate-pulse duration-1000">
-            <div class="absolute inset-0 bg-gradient-to-t from-luxury-dark via-luxury-dark/80 to-transparent"></div>
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-28 pb-20 overflow-hidden bg-gradient-to-b from-luxury-bg via-[#f7f4ee] to-luxury-bg">
+        <div class="absolute inset-0 z-0 opacity-15">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=2000&auto=format&fit=crop" alt="Luxury Activewear Aesthetic" class="w-full h-full object-cover">
         </div>
 
         <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-luxury-gold/30 bg-luxury-gold/10 text-luxury-gold text-xs uppercase tracking-[0.3em] font-semibold mb-8">
-                <i class="fa-solid fa-crown text-[10px]"></i> Elite B2B Manufacturing Partner
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-luxury-gold/40 bg-luxury-gold/10 text-luxury-darkGold text-xs uppercase tracking-[0.3em] font-semibold mb-8 shadow-sm">
+                <i class="fa-solid fa-crown text-[10px] rose-gold-accent"></i> Elite B2B Custom Activewear & Gymnastics Manufacturer
             </div>
             
-            <h1 class="font-heading font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight mb-6 leading-tight">
+            <h1 class="font-heading font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight mb-6 leading-tight text-luxury-darkText">
                 Global B2B Custom Manufacturer & <span class="gold-gradient-text block mt-2">Export-Quality Activewear</span>
             </h1>
             
-            <p class="max-w-2xl mx-auto text-luxury-muted text-base sm:text-lg lg:text-xl font-light mb-10 leading-relaxed">
-                Empowering international fitness brands, elite boutiques, and performance academies with buttery-soft, 4-way stretch, custom-engineered luxury activewear & gymnastics gear.
+            <p class="max-w-2xl mx-auto text-luxury-mutedText text-base sm:text-lg lg:text-xl font-light mb-10 leading-relaxed">
+                Empowering international fitness brands, elite boutiques, and youth/adult gymnastics academies with buttery-soft, 4-way stretch, custom-engineered apparel.
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#catalog" class="w-full sm:w-auto gold-gradient-bg text-black font-heading font-bold text-sm uppercase tracking-wider px-8 py-4 rounded-full hover:shadow-[0_0_25px_rgba(212,175,55,0.5)] transition-all">
+                <a href="#catalog" class="w-full sm:w-auto gold-gradient-bg text-white font-heading font-bold text-sm uppercase tracking-wider px-8 py-4 rounded-full hover:shadow-[0_4px_25px_rgba(197,160,89,0.5)] transition-all">
                     Explore Wholesale Catalog
                 </a>
-                <a href="#inquiry" class="w-full sm:w-auto border border-luxury-gold/50 text-luxury-gold font-heading font-semibold text-sm uppercase tracking-wider px-8 py-4 rounded-full hover:bg-luxury-gold/10 transition-all">
+                <a href="#inquiry" class="w-full sm:w-auto border border-luxury-gold text-luxury-darkText font-heading font-semibold text-sm uppercase tracking-wider px-8 py-4 rounded-full hover:bg-luxury-gold/10 transition-all">
                     Connect for Customization
                 </a>
             </div>
 
-            <!-- Trust Bar / Metrics -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 pt-12 border-t border-luxury-border/60 text-left">
+            <!-- Trust Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 pt-12 border-t border-luxury-border text-left">
                 <div class="border-l-2 border-luxury-gold pl-4">
-                    <span class="block font-heading font-bold text-2xl text-white">12 Pcs</span>
-                    <span class="text-xs text-luxury-muted uppercase tracking-wider">Low MOQ Start</span>
+                    <span class="block font-heading font-bold text-2xl text-luxury-darkText">12 Pcs</span>
+                    <span class="text-xs text-luxury-mutedText uppercase tracking-wider">Low MOQ Start</span>
                 </div>
                 <div class="border-l-2 border-luxury-gold pl-4">
-                    <span class="block font-heading font-bold text-2xl text-white">100%</span>
-                    <span class="text-xs text-luxury-muted uppercase tracking-wider">Private Labeling</span>
+                    <span class="block font-heading font-bold text-2xl text-luxury-darkText">100%</span>
+                    <span class="text-xs text-luxury-mutedText uppercase tracking-wider">Private Labeling</span>
                 </div>
                 <div class="border-l-2 border-luxury-gold pl-4">
-                    <span class="block font-heading font-bold text-2xl text-white">Global</span>
-                    <span class="text-xs text-luxury-muted uppercase tracking-wider">Express Shipping</span>
+                    <span class="block font-heading font-bold text-2xl text-luxury-darkText">Global</span>
+                    <span class="text-xs text-luxury-mutedText uppercase tracking-wider">Express Shipping</span>
                 </div>
                 <div class="border-l-2 border-luxury-gold pl-4">
-                    <span class="block font-heading font-bold text-2xl text-white">Export</span>
-                    <span class="text-xs text-luxury-muted uppercase tracking-wider">Grade Standard</span>
+                    <span class="block font-heading font-bold text-2xl text-luxury-darkText">Ages 7–16+</span>
+                    <span class="text-xs text-luxury-mutedText uppercase tracking-wider">Youth & Adult Lines</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Catalog Section: Adult Elite Collection -->
-    <section id="catalog" class="py-24 bg-luxury-card/50 border-t border-luxury-border">
+    <!-- Adult Catalog Section -->
+    <section id="catalog" class="py-24 bg-luxury-surface border-t border-luxury-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
                 <div>
-                    <span class="text-luxury-gold text-xs uppercase tracking-[0.3em] font-semibold block mb-2">B2B Collection</span>
-                    <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white tracking-wide">Elite Adult Gymnastics & Activewear</h2>
+                    <span class="text-luxury-gold text-xs uppercase tracking-[0.3em] font-semibold block mb-2">Adult Collection</span>
+                    <h2 class="font-heading font-bold text-3xl sm:text-4xl text-luxury-darkText tracking-wide">Elite Adult Gymnastics & Activewear</h2>
                 </div>
-                <p class="text-luxury-muted text-sm max-w-md mt-4 md:mt-0">
-                    Designed for supreme flexibility, muscle compression, and immaculate aesthetics. Fully customizable with your brand identity.
+                <p class="text-luxury-mutedText text-sm max-w-md mt-4 md:mt-0">
+                    Engineered for supreme flexibility, muscle compression, and immaculate aesthetic presentation. Fully customizable with your brand identity.
                 </p>
             </div>
 
-            <!-- Product Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Product 1 -->
-                <div class="product-card bg-luxury-dark border border-luxury-border rounded-xl overflow-hidden group transition-all duration-300 hover:border-luxury-gold/50">
-                    <div class="relative h-80 overflow-hidden bg-black">
-                        <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=800&auto=format&fit=crop" alt="Aesthetic Gymnastics Leotard" class="product-img w-full h-full object-cover transition-transform duration-700 opacity-90">
-                        <div class="absolute top-4 right-4 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full border border-luxury-gold/30 text-[10px] text-luxury-gold tracking-widest uppercase font-semibold">
+                <div class="product-card bg-luxury-card border border-luxury-border rounded-2xl overflow-hidden group transition-all duration-300 hover:border-luxury-gold shadow-sm">
+                    <div class="relative h-80 overflow-hidden bg-white">
+                        <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=800&auto=format&fit=crop" alt="Aura Pro Competition Leotard" class="product-img w-full h-full object-cover transition-transform duration-700">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full border border-luxury-gold/40 text-[10px] text-luxury-darkText tracking-widest uppercase font-semibold">
                             Customizable
                         </div>
                     </div>
                     <div class="p-6">
                         <span class="text-luxury-gold text-xs font-semibold tracking-widest uppercase block mb-1">SKU: MC-GYM-01</span>
-                        <h3 class="font-heading font-bold text-xl text-white mb-2">Aura Pro Competition Leotard</h3>
-                        <p class="text-luxury-muted text-sm mb-6 font-light">
-                            Crafted with high-tension 4-way stretch fabric, moisture-wicking technology, and ergonomic contour stitching for peak gymnast performance.
+                        <h3 class="font-heading font-bold text-xl text-luxury-darkText mb-2">Aura Pro Competition Leotard</h3>
+                        <p class="text-luxury-mutedText text-sm mb-6 font-light">
+                            Crafted with high-tension 4-way stretch fabric, moisture-wicking technology, and ergonomic contour stitching for peak performance.
                         </p>
-                        <button onclick="openQuoteModal('Aura Pro Competition Leotard (SKU: MC-GYM-01)')" class="w-full py-3 bg-luxury-card hover:bg-luxury-gold hover:text-black border border-luxury-gold/40 text-luxury-gold font-heading font-semibold text-xs uppercase tracking-wider rounded-lg transition-all duration-300">
+                        <button onclick="openQuoteModal('Aura Pro Competition Leotard [SKU: MC-GYM-01]')" class="w-full py-3 bg-white hover:bg-luxury-gold hover:text-white border border-luxury-gold/50 text-luxury-darkText font-heading font-semibold text-xs uppercase tracking-wider rounded-xl transition-all duration-300 shadow-sm">
                             Request Wholesale Quote
                         </button>
                     </div>
                 </div>
 
                 <!-- Product 2 -->
-                <div class="product-card bg-luxury-dark border border-luxury-border rounded-xl overflow-hidden group transition-all duration-300 hover:border-luxury-gold/50">
-                    <div class="relative h-80 overflow-hidden bg-black">
-                        <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=800&auto=format&fit=crop" alt="Luxury Yoga & Active Set" class="product-img w-full h-full object-cover transition-transform duration-700 opacity-90">
-                        <div class="absolute top-4 right-4 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full border border-luxury-gold/30 text-[10px] text-luxury-gold tracking-widest uppercase font-semibold">
+                <div class="product-card bg-luxury-card border border-luxury-border rounded-2xl overflow-hidden group transition-all duration-300 hover:border-luxury-gold shadow-sm">
+                    <div class="relative h-80 overflow-hidden bg-white">
+                        <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=800&auto=format&fit=crop" alt="Velour Butter-Soft Yoga Set" class="product-img w-full h-full object-cover transition-transform duration-700">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full border border-luxury-gold/40 text-[10px] text-luxury-darkText tracking-widest uppercase font-semibold">
                             Customizable
                         </div>
                     </div>
                     <div class="p-6">
                         <span class="text-luxury-gold text-xs font-semibold tracking-widest uppercase block mb-1">SKU: MC-ACT-02</span>
-                        <h3 class="font-heading font-bold text-xl text-white mb-2">Velour Butter-Soft Yoga Set</h3>
-                        <p class="text-luxury-muted text-sm mb-6 font-light">
+                        <h3 class="font-heading font-bold text-xl text-luxury-darkText mb-2">Velour Butter-Soft Yoga Set</h3>
+                        <p class="text-luxury-mutedText text-sm mb-6 font-light">
                             Designed with second-skin buttery-soft finish, seamless waist support, and breathable ventilation mesh for boutique activewear lines.
                         </p>
-                        <button onclick="openQuoteModal('Velour Butter-Soft Yoga Set (SKU: MC-ACT-02)')" class="w-full py-3 bg-luxury-card hover:bg-luxury-gold hover:text-black border border-luxury-gold/40 text-luxury-gold font-heading font-semibold text-xs uppercase tracking-wider rounded-lg transition-all duration-300">
+                        <button onclick="openQuoteModal('Velour Butter-Soft Yoga Set [SKU: MC-ACT-02]')" class="w-full py-3 bg-white hover:bg-luxury-gold hover:text-white border border-luxury-gold/50 text-luxury-darkText font-heading font-semibold text-xs uppercase tracking-wider rounded-xl transition-all duration-300 shadow-sm">
                             Request Wholesale Quote
                         </button>
                     </div>
                 </div>
 
                 <!-- Product 3 -->
-                <div class="product-card bg-luxury-dark border border-luxury-border rounded-xl overflow-hidden group transition-all duration-300 hover:border-luxury-gold/50">
-                    <div class="relative h-80 overflow-hidden bg-black">
-                        <img src="https://images.unsplash.com/photo-1549476464-37392f717541?q=80&w=800&auto=format&fit=crop" alt="Elite Training & Gym Wear" class="product-img w-full h-full object-cover transition-transform duration-700 opacity-90">
-                        <div class="absolute top-4 right-4 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full border border-luxury-gold/30 text-[10px] text-luxury-gold tracking-widest uppercase font-semibold">
+                <div class="product-card bg-luxury-card border border-luxury-border rounded-2xl overflow-hidden group transition-all duration-300 hover:border-luxury-gold shadow-sm">
+                    <div class="relative h-80 overflow-hidden bg-white">
+                        <img src="https://images.unsplash.com/photo-1549476464-37392f717541?q=80&w=800&auto=format&fit=crop" alt="Prime Contour Compression Wear" class="product-img w-full h-full object-cover transition-transform duration-700">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full border border-luxury-gold/40 text-[10px] text-luxury-darkText tracking-widest uppercase font-semibold">
                             Customizable
                         </div>
                     </div>
                     <div class="p-6">
                         <span class="text-luxury-gold text-xs font-semibold tracking-widest uppercase block mb-1">SKU: MC-FIT-03</span>
-                        <h3 class="font-heading font-bold text-xl text-white mb-2">Prime Contour Compression Wear</h3>
-                        <p class="text-luxury-muted text-sm mb-6 font-light">
+                        <h3 class="font-heading font-bold text-xl text-luxury-darkText mb-2">Prime Contour Compression Wear</h3>
+                        <p class="text-luxury-mutedText text-sm mb-6 font-light">
                             Engineered for high-intensity training with targeted muscle support, anti-chafing flatlock stitching, and custom private label branding.
                         </p>
-                        <button onclick="openQuoteModal('Prime Contour Compression Wear (SKU: MC-FIT-03)')" class="w-full py-3 bg-luxury-card hover:bg-luxury-gold hover:text-black border border-luxury-gold/40 text-luxury-gold font-heading font-semibold text-xs uppercase tracking-wider rounded-lg transition-all duration-300">
+                        <button onclick="openQuoteModal('Prime Contour Compression Wear [SKU: MC-FIT-03]')" class="w-full py-3 bg-white hover:bg-luxury-gold hover:text-white border border-luxury-gold/50 text-luxury-darkText font-heading font-semibold text-xs uppercase tracking-wider rounded-xl transition-all duration-300 shadow-sm">
                             Request Wholesale Quote
                         </button>
                     </div>
@@ -256,57 +264,56 @@
         </div>
     </section>
 
-    <!-- Catalog Section: Youth & Kids Collection (7-15 Years) -->
-    <section id="kids-catalog" class="py-24 bg-luxury-dark border-t border-luxury-border">
+    <!-- Youth & Kids Collection (Ages 7 to 16 Years - Ribbon, Hoop, Ball & Gymnastics) -->
+    <section id="youth-catalog" class="py-24 bg-luxury-bg border-t border-luxury-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
                 <div>
-                    <span class="text-luxury-gold text-xs uppercase tracking-[0.3em] font-semibold block mb-2">Youth & Kids Line</span>
-                    <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white tracking-wide">Youth & Kids Gymnastics (Ages 7–15 Years)</h2>
+                    <span class="text-luxury-gold text-xs uppercase tracking-[0.3em] font-semibold block mb-2">Youth & Kids Collection (7–16 Years)</span>
+                    <h2 class="font-heading font-bold text-3xl sm:text-4xl text-luxury-darkText tracking-wide">Junior Gymnastic & Apparatus Activewear</h2>
                 </div>
-                <p class="text-luxury-muted text-sm max-w-md mt-4 md:mt-0">
-                    High-performance activewear and flare-shorts gymnastics outfits tailored specifically for young athletes and junior training academies.
+                <p class="text-luxury-mutedText text-sm max-w-md mt-4 md:mt-0">
+                    Specially tailored for young gymnast athletes (ages 7 to 16) performing with ribbons, hoops/rings, and balls. Includes high-elasticity flare shorts and performance sets.
                 </p>
             </div>
 
-            <!-- Kids Product Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 
-                <!-- Kids Product 1 -->
-                <div class="product-card bg-luxury-card border border-luxury-border rounded-xl overflow-hidden group transition-all duration-300 hover:border-luxury-gold/50">
-                    <div class="relative h-80 overflow-hidden bg-black">
-                        <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=800&auto=format&fit=crop" alt="Youth Gymnastics Outfit" class="product-img w-full h-full object-cover transition-transform duration-700 opacity-90">
-                        <div class="absolute top-4 right-4 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full border border-luxury-gold/30 text-[10px] text-luxury-gold tracking-widest uppercase font-semibold">
-                            Ages 7 - 15 Years
+                <!-- Youth Product 1 -->
+                <div class="product-card bg-luxury-surface border border-luxury-border rounded-2xl overflow-hidden group transition-all duration-300 hover:border-luxury-gold shadow-sm">
+                    <div class="relative h-80 overflow-hidden bg-white">
+                        <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=800&auto=format&fit=crop" alt="Junior Ribbon & Apparatus Leotard" class="product-img w-full h-full object-cover transition-transform duration-700">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full border border-luxury-gold/40 text-[10px] text-luxury-darkText tracking-widest uppercase font-semibold">
+                            Ages 7–16 Years
                         </div>
                     </div>
                     <div class="p-6">
                         <span class="text-luxury-gold text-xs font-semibold tracking-widest uppercase block mb-1">SKU: MC-KIDS-GYM-01</span>
-                        <h3 class="font-heading font-bold text-xl text-white mb-2">Junior Elite Gymnastics Leotard & Set</h3>
-                        <p class="text-luxury-muted text-sm mb-6 font-light">
-                            Specially proportioned for junior gymnasts (ages 7 to 15). Features flexible 4-way stretch fabric, vibrant sublimation print options, and secure comfort stitching.
+                        <h3 class="font-heading font-bold text-xl text-luxury-darkText mb-2">Junior Apparatus Leotard & Training Set</h3>
+                        <p class="text-luxury-mutedText text-sm mb-6 font-light">
+                            Designed for young gymnast routines involving ribbons, balls, and hoops. Features lightweight 4-way stretch fabrics, dazzling sublimation patterns, and flexible fit.
                         </p>
-                        <button onclick="openQuoteModal('Junior Elite Gymnastics Leotard (Ages 7-15) [SKU: MC-KIDS-GYM-01]')" class="w-full py-3 bg-luxury-dark hover:bg-luxury-gold hover:text-black border border-luxury-gold/40 text-luxury-gold font-heading font-semibold text-xs uppercase tracking-wider rounded-lg transition-all duration-300">
+                        <button onclick="openQuoteModal('Junior Apparatus Leotard (Ages 7-16) [SKU: MC-KIDS-GYM-01]')" class="w-full py-3 bg-luxury-card hover:bg-luxury-gold hover:text-white border border-luxury-gold/50 text-luxury-darkText font-heading font-semibold text-xs uppercase tracking-wider rounded-xl transition-all duration-300 shadow-sm">
                             Request Wholesale Quote
                         </button>
                     </div>
                 </div>
 
-                <!-- Kids Product 2 -->
-                <div class="product-card bg-luxury-card border border-luxury-border rounded-xl overflow-hidden group transition-all duration-300 hover:border-luxury-gold/50">
-                    <div class="relative h-80 overflow-hidden bg-black">
-                        <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=800&auto=format&fit=crop" alt="Kids Flare Shorts Activewear" class="product-img w-full h-full object-cover transition-transform duration-700 opacity-90">
-                        <div class="absolute top-4 right-4 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full border border-luxury-gold/30 text-[10px] text-luxury-gold tracking-widest uppercase font-semibold">
-                            Ages 7 - 15 Years
+                <!-- Youth Product 2 -->
+                <div class="product-card bg-luxury-surface border border-luxury-border rounded-2xl overflow-hidden group transition-all duration-300 hover:border-luxury-gold shadow-sm">
+                    <div class="relative h-80 overflow-hidden bg-white">
+                        <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=800&auto=format&fit=crop" alt="Youth Flare Shorts Activewear Set" class="product-img w-full h-full object-cover transition-transform duration-700">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full border border-luxury-gold/40 text-[10px] text-luxury-darkText tracking-widest uppercase font-semibold">
+                            Ages 7–16 Years
                         </div>
                     </div>
                     <div class="p-6">
                         <span class="text-luxury-gold text-xs font-semibold tracking-widest uppercase block mb-1">SKU: MC-KIDS-ACT-02</span>
-                        <h3 class="font-heading font-bold text-xl text-white mb-2">Youth Flare Shorts & Training Top</h3>
-                        <p class="text-luxury-muted text-sm mb-6 font-light">
-                            Stylish flare-shorts activewear set designed for growing youth athletes (7-15Y). Breathable, lightweight, moisture-wicking, and tailored for maximum agility.
+                        <h3 class="font-heading font-bold text-xl text-luxury-darkText mb-2">Youth Flare Shorts & Athletic Top</h3>
+                        <p class="text-luxury-mutedText text-sm mb-6 font-light">
+                            Trendy and comfortable flare shorts activewear set for growing athletes (7-16Y). Moisture-wicking, breathable, and tailored for absolute freedom of movement.
                         </p>
-                        <button onclick="openQuoteModal('Youth Flare Shorts & Training Top (Ages 7-15) [SKU: MC-KIDS-ACT-02]')" class="w-full py-3 bg-luxury-dark hover:bg-luxury-gold hover:text-black border border-luxury-gold/40 text-luxury-gold font-heading font-semibold text-xs uppercase tracking-wider rounded-lg transition-all duration-300">
+                        <button onclick="openQuoteModal('Youth Flare Shorts & Athletic Top (Ages 7-16) [SKU: MC-KIDS-ACT-02]')" class="w-full py-3 bg-luxury-card hover:bg-luxury-gold hover:text-white border border-luxury-gold/50 text-luxury-darkText font-heading font-semibold text-xs uppercase tracking-wider rounded-xl transition-all duration-300 shadow-sm">
                             Request Wholesale Quote
                         </button>
                     </div>
@@ -317,46 +324,46 @@
     </section>
 
     <!-- Customization & Capabilities Section -->
-    <section id="customization" class="py-24 bg-luxury-card/50 border-t border-luxury-border relative overflow-hidden">
+    <section id="customization" class="py-24 bg-luxury-surface border-t border-luxury-border relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-luxury-gold text-xs uppercase tracking-[0.3em] font-semibold block mb-2">Manufacturing Excellence</span>
-                <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white tracking-wide mb-4">Uncompromising Customization & Standards</h2>
-                <p class="text-luxury-muted text-base font-light">
-                    We bring your luxury activewear vision to life with precision manufacturing, bespoke fabric sourcing, and full-spectrum private labeling.
+                <h2 class="font-heading font-bold text-3xl sm:text-4xl text-luxury-darkText tracking-wide mb-4">Uncompromising Customization & Standards</h2>
+                <p class="text-luxury-mutedText text-base font-light">
+                    We bring your luxury activewear vision to life with precision manufacturing, bespoke fabric sourcing, private labeling, and low minimum order quantities.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Capability 1 -->
-                <div class="bg-luxury-dark p-8 rounded-2xl border border-luxury-border text-center hover:border-luxury-gold/40 transition-all">
-                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-luxury-gold/10 border border-luxury-gold/30 flex items-center justify-center text-luxury-gold text-2xl">
+                <div class="bg-luxury-card p-8 rounded-2xl border border-luxury-border text-center hover:border-luxury-gold transition-all shadow-sm">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-luxury-gold/10 border border-luxury-gold/40 flex items-center justify-center text-luxury-gold text-2xl">
                         <i class="fa-solid fa-sliders"></i>
                     </div>
-                    <h3 class="font-heading font-bold text-xl text-white mb-3">100% Customization & MOQ 12</h3>
-                    <p class="text-luxury-muted text-sm font-light leading-relaxed">
-                        Start your boutique brand effortlessly with low minimum order quantities (MOQ: 12 pieces per style/color). Custom tags, heat-transfer logos, and bespoke colorways.
+                    <h3 class="font-heading font-bold text-xl text-luxury-darkText mb-3">100% Customization & MOQ 12</h3>
+                    <p class="text-luxury-mutedText text-sm font-light leading-relaxed">
+                        Start your boutique brand effortlessly with low minimum order quantities (MOQ: 12 pieces per style/color). Custom tags, heat-transfer branding, and bespoke colorways.
                     </p>
                 </div>
 
                 <!-- Capability 2 -->
-                <div class="bg-luxury-dark p-8 rounded-2xl border border-luxury-border text-center hover:border-luxury-gold/40 transition-all">
-                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-luxury-gold/10 border border-luxury-gold/30 flex items-center justify-center text-luxury-gold text-2xl">
+                <div class="bg-luxury-card p-8 rounded-2xl border border-luxury-border text-center hover:border-luxury-gold transition-all shadow-sm">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-luxury-gold/10 border border-luxury-gold/40 flex items-center justify-center text-luxury-gold text-2xl">
                         <i class="fa-solid fa-shirt"></i>
                     </div>
-                    <h3 class="font-heading font-bold text-xl text-white mb-3">Elite Fabric Standards</h3>
-                    <p class="text-luxury-muted text-sm font-light leading-relaxed">
+                    <h3 class="font-heading font-bold text-xl text-luxury-darkText mb-3">Elite Fabric Standards</h3>
+                    <p class="text-luxury-mutedText text-sm font-light leading-relaxed">
                         Engineered with advanced 4-Way Stretch for complete mobility, rapid Moisture-Wicking technology, and a signature Butter-Soft finish for maximum comfort.
                     </p>
                 </div>
 
                 <!-- Capability 3 -->
-                <div class="bg-luxury-dark p-8 rounded-2xl border border-luxury-border text-center hover:border-luxury-gold/40 transition-all">
-                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-luxury-gold/10 border border-luxury-gold/30 flex items-center justify-center text-luxury-gold text-2xl">
+                <div class="bg-luxury-card p-8 rounded-2xl border border-luxury-border text-center hover:border-luxury-gold transition-all shadow-sm">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-luxury-gold/10 border border-luxury-gold/40 flex items-center justify-center text-luxury-gold text-2xl">
                         <i class="fa-solid fa-globe"></i>
                     </div>
-                    <h3 class="font-heading font-bold text-xl text-white mb-3">Worldwide Global Shipping</h3>
-                    <p class="text-luxury-muted text-sm font-light leading-relaxed">
+                    <h3 class="font-heading font-bold text-xl text-luxury-darkText mb-3">Worldwide Global Shipping</h3>
+                    <p class="text-luxury-mutedText text-sm font-light leading-relaxed">
                         Reliable, fast, and secure international courier partnerships ensuring express delivery to boutique owners and fitness brands across North America, Europe, and beyond.
                     </p>
                 </div>
@@ -365,39 +372,39 @@
     </section>
 
     <!-- About Us Section -->
-    <section id="about" class="py-24 bg-luxury-dark border-t border-luxury-border">
+    <section id="about" class="py-24 bg-luxury-bg border-t border-luxury-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                     <span class="text-luxury-gold text-xs uppercase tracking-[0.3em] font-semibold block mb-2">About Mir's Core</span>
-                    <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white tracking-wide mb-6">Crafting Excellence in Global Activewear Manufacturing</h2>
-                    <p class="text-luxury-muted text-base font-light mb-6 leading-relaxed">
+                    <h2 class="font-heading font-bold text-3xl sm:text-4xl text-luxury-darkText tracking-wide mb-6">Crafting Excellence in Global Activewear Manufacturing</h2>
+                    <p class="text-luxury-mutedText text-base font-light mb-6 leading-relaxed">
                         Mir's Core stands at the pinnacle of high-end activewear and gymnastics manufacturing. We cater exclusively to elite international boutique owners, fitness founders, and sports academies who demand uncompromising quality, precise tailoring, and luxury aesthetic finishing.
                     </p>
-                    <p class="text-luxury-muted text-base font-light mb-8 leading-relaxed">
-                        From adults to youth and kids athletes (ages 7-15), every single garment is put through strict export-grade quality assurance to ensure durability, flexibility, and absolute comfort.
+                    <p class="text-luxury-mutedText text-base font-light mb-8 leading-relaxed">
+                        From adults to youth and kids athletes (ages 7-16), every garment is put through strict export-grade quality assurance to ensure durability, flexibility, and absolute comfort.
                     </p>
                     <div class="flex items-center gap-6">
                         <div class="flex items-center gap-3">
                             <div class="w-12 h-12 rounded-full bg-luxury-gold/10 border border-luxury-gold/40 flex items-center justify-center text-luxury-gold">
                                 <i class="fa-solid fa-check text-lg"></i>
                             </div>
-                            <span class="font-heading font-semibold text-white text-sm">Private Label Specialists</span>
+                            <span class="font-heading font-semibold text-luxury-darkText text-sm">Private Label Specialists</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <div class="w-12 h-12 rounded-full bg-luxury-gold/10 border border-luxury-gold/40 flex items-center justify-center text-luxury-gold">
                                 <i class="fa-solid fa-shield-halved text-lg"></i>
                             </div>
-                            <span class="font-heading font-semibold text-white text-sm">Export Quality Assurance</span>
+                            <span class="font-heading font-semibold text-luxury-darkText text-sm">Export Quality Assurance</span>
                         </div>
                     </div>
                 </div>
-                <div class="relative h-[450px] rounded-2xl overflow-hidden border border-luxury-border">
+                <div class="relative h-[450px] rounded-2xl overflow-hidden border border-luxury-border shadow-md">
                     <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1000&auto=format&fit=crop" alt="Manufacturing Craftsmanship" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-8">
                         <div>
                             <span class="text-luxury-gold font-heading font-bold text-lg block">Precision Tailoring</span>
-                            <span class="text-luxury-muted text-xs uppercase tracking-widest">State-of-the-art Production Facility</span>
+                            <span class="text-gray-200 text-xs uppercase tracking-widest">State-of-the-art Production Facility</span>
                         </div>
                     </div>
                 </div>
@@ -406,61 +413,64 @@
     </section>
 
     <!-- Dedicated Inquiry / Wholesale Form Section -->
-    <section id="inquiry" class="py-24 bg-luxury-card/50 border-t border-luxury-border relative">
+    <section id="inquiry" class="py-24 bg-luxury-surface border-t border-luxury-border relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <span class="text-luxury-gold text-xs uppercase tracking-[0.3em] font-semibold block mb-2">Direct Connection</span>
-                <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white tracking-wide mb-4">Request Wholesale Inquiry & Custom Quote</h2>
-                <p class="text-luxury-muted text-base font-light">
-                    Submit your details below to connect instantly with our B2B manufacturing specialists. All inquiries are securely routed to our official communication channels.
+                <h2 class="font-heading font-bold text-3xl sm:text-4xl text-luxury-darkText tracking-wide mb-4">Request Wholesale Inquiry & Custom Quote</h2>
+                <p class="text-luxury-mutedText text-base font-light">
+                    Submit your details below to connect instantly with our B2B manufacturing specialists via WhatsApp.
                 </p>
             </div>
 
-            <div class="bg-luxury-dark border border-luxury-border rounded-2xl p-8 sm:p-12 shadow-2xl">
+            <div class="bg-luxury-card border border-luxury-border rounded-2xl p-8 sm:p-12 shadow-lg">
                 <form id="wholesale-form" onsubmit="sendToWhatsApp(event)" class="space-y-6">
                     
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-xs font-semibold uppercase tracking-wider text-luxury-muted mb-2">Full Name *</label>
-                            <input type="text" id="fullName" required class="w-full bg-luxury-card border border-luxury-border rounded-lg px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-luxury-gold transition-colors text-sm" placeholder="e.g. Johnathan Doe">
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-luxury-mutedText mb-2">Full Name *</label>
+                            <input type="text" id="fullName" required class="w-full bg-white border border-luxury-border rounded-xl px-4 py-3.5 text-luxury-darkText placeholder-gray-400 focus:outline-none focus:border-luxury-gold transition-colors text-sm shadow-sm" placeholder="e.g. Johnathan Doe">
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold uppercase tracking-wider text-luxury-muted mb-2">Brand / Boutique Name *</label>
-                            <input type="text" id="brandName" required class="w-full bg-luxury-card border border-luxury-border rounded-lg px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-luxury-gold transition-colors text-sm" placeholder="e.g. Apex Luxury Fitness">
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-semibold uppercase tracking-wider text-luxury-muted mb-2">Country / Location *</label>
-                            <input type="text" id="country" required class="w-full bg-luxury-card border border-luxury-border rounded-lg px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-luxury-gold transition-colors text-sm" placeholder="e.g. United States / UK">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold uppercase tracking-wider text-luxury-muted mb-2">Email Address *</label>
-                            <input type="email" id="email" required class="w-full bg-luxury-card border border-luxury-border rounded-lg px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-luxury-gold transition-colors text-sm" value="saleem.mir81509@gmail.com" readonly>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-luxury-mutedText mb-2">Brand / Boutique Name *</label>
+                            <input type="text" id="brandName" required class="w-full bg-white border border-luxury-border rounded-xl px-4 py-3.5 text-luxury-darkText placeholder-gray-400 focus:outline-none focus:border-luxury-gold transition-colors text-sm shadow-sm" placeholder="e.g. Apex Luxury Fitness">
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-xs font-semibold uppercase tracking-wider text-luxury-muted mb-2">WhatsApp Number *</label>
-                            <input type="text" id="whatsapp" required class="w-full bg-luxury-card border border-luxury-border rounded-lg px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-luxury-gold transition-colors text-sm" value="+92 315 5239697">
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-luxury-mutedText mb-2">Country / Location *</label>
+                            <input type="text" id="country" required class="w-full bg-white border border-luxury-border rounded-xl px-4 py-3.5 text-luxury-darkText placeholder-gray-400 focus:outline-none focus:border-luxury-gold transition-colors text-sm shadow-sm" placeholder="e.g. United States / UK">
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold uppercase tracking-wider text-luxury-muted mb-2">Product Interest / Selected Item</label>
-                            <input type="text" id="productInterest" class="w-full bg-luxury-card border border-luxury-border rounded-lg px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-luxury-gold transition-colors text-sm" placeholder="General Catalog / Specific SKU">
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-luxury-mutedText mb-2">Email Address *</label>
+                            <input type="email" id="email" required class="w-full bg-white border border-luxury-border rounded-xl px-4 py-3.5 text-luxury-darkText placeholder-gray-400 focus:outline-none focus:border-luxury-gold transition-colors text-sm shadow-sm" value="saleem.mir81509@gmail.com" readonly>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-luxury-mutedText mb-2">WhatsApp Number *</label>
+                            <input type="text" id="whatsapp" required class="w-full bg-white border border-luxury-border rounded-xl px-4 py-3.5 text-luxury-darkText placeholder-gray-400 focus:outline-none focus:border-luxury-gold transition-colors text-sm shadow-sm" value="+92 315 5239697">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-luxury-mutedText mb-2">Product Interest / Selected Item</label>
+                            <input type="text" id="productInterest" class="w-full bg-white border border-luxury-border rounded-xl px-4 py-3.5 text-luxury-darkText placeholder-gray-400 focus:outline-none focus:border-luxury-gold transition-colors text-sm shadow-sm" placeholder="General Catalog / Specific SKU">
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-semibold uppercase tracking-wider text-luxury-muted mb-2">Estimated Quantity / Requirement Details *</label>
-                        <textarea id="requirements" rows="4" required class="w-full bg-luxury-card border border-luxury-border rounded-lg px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-luxury-gold transition-colors text-sm" placeholder="Mention quantities (MOQ 12+), sizes (Adult / Youth 7-15Y), custom branding needs..."></textarea>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-luxury-mutedText mb-2">Estimated Quantity / Requirement Details *</label>
+                        <textarea id="requirements" rows="4" required class="w-full bg-white border border-luxury-border rounded-xl px-4 py-3.5 text-luxury-darkText placeholder-gray-400 focus:outline-none focus:border-luxury-gold transition-colors text-sm shadow-sm" placeholder="Mention quantities (MOQ 12+), sizes (Adult / Youth 7-16Y), custom branding needs..."></textarea>
                     </div>
 
-                    <div class="pt-4">
-                        <button type="submit" class="w-full gold-gradient-bg text-black font-heading font-bold text-sm uppercase tracking-wider py-4 rounded-xl hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] transition-all flex items-center justify-center gap-2">
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4">
+                        <button type="submit" class="flex-1 gold-gradient-bg text-white font-heading font-bold text-sm uppercase tracking-wider py-4 rounded-xl hover:shadow-[0_4px_25px_rgba(197,160,89,0.4)] transition-all flex items-center justify-center gap-2">
                             <i class="fa-brands fa-whatsapp text-lg"></i> Send Wholesale Inquiry
                         </button>
+                        <a href="https://wa.me/923155239697" target="_blank" class="px-6 py-4 rounded-xl border border-luxury-gold text-luxury-gold font-heading font-bold text-sm uppercase tracking-wider hover:bg-luxury-gold hover:text-white transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Direct WhatsApp
+                        </a>
                     </div>
                 </form>
             </div>
@@ -468,32 +478,32 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black border-t border-luxury-border py-16">
+    <footer class="bg-luxury-darkText text-white border-t border-luxury-border py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <!-- Brand Info -->
                 <div class="md:col-span-2">
                     <div class="flex items-center gap-3 mb-6">
-                        <div class="w-12 h-12 rounded-full border border-luxury-gold/50 flex items-center justify-center bg-black overflow-hidden">
+                        <div class="w-12 h-12 rounded-full border border-luxury-gold/60 flex items-center justify-center bg-white overflow-hidden shadow-sm">
                             <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=200&auto=format&fit=crop" alt="Mir's Core Logo" class="w-full h-full object-cover">
                         </div>
                         <div>
                             <span class="font-heading font-extrabold text-lg tracking-wider gold-gradient-text block">MIR'S CORE</span>
-                            <span class="text-[9px] tracking-[0.25em] text-luxury-muted uppercase block">Global B2B Custom Manufacturer</span>
+                            <span class="text-[9px] tracking-[0.25em] text-gray-400 uppercase block">Global B2B Custom Manufacturer</span>
                         </div>
                     </div>
-                    <p class="text-luxury-muted text-sm font-light max-w-sm mb-6 leading-relaxed">
-                        The definitive global manufacturing partner for elite activewear and gymnastics brands, delivering unmatched export quality and low MOQs.
+                    <p class="text-gray-400 text-sm font-light max-w-sm mb-6 leading-relaxed">
+                        The definitive global manufacturing partner for elite activewear, youth apparatus gymnastics, and boutique brands delivering unmatched export quality and low MOQs.
                     </p>
                 </div>
 
                 <!-- Quick Links -->
                 <div>
                     <h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider mb-4">Navigation</h4>
-                    <ul class="space-y-2 text-sm text-luxury-muted">
+                    <ul class="space-y-2 text-sm text-gray-400">
                         <li><a href="#home" class="hover:text-luxury-gold transition-colors">Home</a></li>
                         <li><a href="#catalog" class="hover:text-luxury-gold transition-colors">Adult Catalog</a></li>
-                        <li><a href="#kids-catalog" class="hover:text-luxury-gold transition-colors">Youth & Kids (7-15Y)</a></li>
+                        <li><a href="#youth-catalog" class="hover:text-luxury-gold transition-colors">Youth & Kids (7-16Y)</a></li>
                         <li><a href="#customization" class="hover:text-luxury-gold transition-colors">Customization & MOQ</a></li>
                         <li><a href="#about" class="hover:text-luxury-gold transition-colors">About Us</a></li>
                     </ul>
@@ -502,7 +512,7 @@
                 <!-- Contact Details -->
                 <div>
                     <h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider mb-4">Official Contact</h4>
-                    <ul class="space-y-3 text-sm text-luxury-muted">
+                    <ul class="space-y-3 text-sm text-gray-400">
                         <li class="flex items-center gap-3">
                             <i class="fa-solid fa-envelope text-luxury-gold"></i>
                             <a href="mailto:saleem.mir81509@gmail.com" class="hover:text-white transition-colors">saleem.mir81509@gmail.com</a>
@@ -519,14 +529,14 @@
                 </div>
             </div>
 
-            <div class="pt-8 border-t border-luxury-border/60 flex flex-col sm:flex-row items-center justify-between text-xs text-luxury-muted">
+            <div class="pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400">
                 <p>&copy; 2026 Mir's Core. All Rights Reserved. Global Custom Activewear Manufacturer.</p>
                 <p class="mt-4 sm:mt-0">Designed for Elite International Brands & Boutiques.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Interactive JavaScript for Quotation & Direct WhatsApp Routing -->
+    <!-- Interactive JavaScript -->
     <script>
         // Mobile Menu Toggle
         const menuBtn = document.getElementById('menu-btn');
@@ -536,22 +546,19 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Pre-fill Product Interest when clicking Request Wholesale Quote on any card
+        // Pre-fill Product Interest when clicking Request Wholesale Quote
         function openQuoteModal(productName) {
             const productInput = document.getElementById('productInterest');
             productInput.value = productName;
-            
-            // Scroll smoothly to inquiry section
             document.getElementById('inquiry').scrollIntoView({ behavior: 'smooth' });
             
-            // Highlight the input briefly
             productInput.classList.add('border-luxury-gold', 'ring-2', 'ring-luxury-gold/30');
             setTimeout(() => {
                 productInput.classList.remove('ring-2', 'ring-luxury-gold/30');
             }, 1500);
         }
 
-        // Send Form Data directly to WhatsApp
+        // Send Form Data to WhatsApp (+92 315 5239697)
         function sendToWhatsApp(event) {
             event.preventDefault();
 
@@ -563,7 +570,6 @@
             const productInterest = document.getElementById('productInterest').value.trim() || 'General Wholesale Catalog';
             const requirements = document.getElementById('requirements').value.trim();
 
-            // Construct professional WhatsApp message
             const message = `*--- NEW WHOLESALE INQUIRY ---*
 *Brand:* Mir's Core B2B Portal
 ----------------------------------
@@ -579,12 +585,10 @@ ${requirements}
 ----------------------------------
 *Action:* Please process this custom manufacturing quote request.`;
 
-            // Target WhatsApp Number: +92 315 5239697 -> 923155239697
             const targetPhone = '923155239697';
             const encodedMessage = encodeURIComponent(message);
             const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodedMessage}`;
 
-            // Open WhatsApp
             window.open(whatsappUrl, '_blank');
         }
     </script>
