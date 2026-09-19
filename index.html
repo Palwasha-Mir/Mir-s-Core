@@ -807,3 +807,22 @@
     </script>
 </body>
 </html>
+<script>
+    window.addEventListener('DOMContentLoaded', function () {
+        // Naye logo ka file path ya URL yahan set kiya gaya hai
+        const logoSrc = "gym logo_4.jpeg";
+
+        // Header aur Footer ke logo containers ko target karke naya image tag insert karna
+        const logoContainers = document.querySelectorAll('header button .w-12.h-12, footer .w-10.h-10');
+        
+        logoContainers.forEach(container => {
+            container.innerHTML = `<img src="${logoSrc}" alt="Mir's Core Logo" class="w-full h-full object-cover rounded-full">`;
+        });
+
+        // Lightbox modal ya zoom popup ke liye agar koi image element ho toh use update karna
+        const lightboxImg = document.querySelector('#lightbox-modal img');
+        if (lightboxImg) {
+            lightboxImg.src = logoSrc;
+        }
+    });
+</script>
