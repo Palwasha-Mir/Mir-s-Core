@@ -528,69 +528,7 @@
       </div>
     </div>
   </div>
-
-  <!-- ==================== LOGO FULLSCREEN MODAL ==================== -->
-  <div id="logoModal" class="fixed inset-0 z-50 hidden bg-deepText/90 backdrop-blur-md flex items-center justify-center p-4" onclick="closeLogoModal()">
-    <div class="relative max-w-md w-full bg-cardWhite p-8 rounded-3xl text-center space-y-4 shadow-2xl border-2 border-roseGold" onclick="event.stopPropagation()">
-      <button onclick="closeLogoModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-cremeBg flex items-center justify-center text-deepText hover:bg-roseGold hover:text-white transition">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-      <img src="gym logo.jpeg" alt="Mir's Core Logo" class="w-32 h-32 rounded-xl object-cover mx-auto border-4 border-roseGold shadow-lg">
-      <h3 class="text-2xl font-serif font-bold text-deepText">Mir's Core</h3>
-      <p class="text-xs text-mutedText">Luxury Activewear B2B Manufacturer & Global Exporter.</p>
-      <div class="pt-2">
-        <a href="https://wa.me/923155239697" target="_blank" class="inline-block bg-roseGold text-white px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider shadow-md">Contact: +92 315 5239697</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- AOS Script -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800,
-      once: true
-    });
-
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('hidden');
-    }
-
-    function openQuickView(imgSrc, title, desc) {
-      document.getElementById('modalImg').src = imgSrc;
-      document.getElementById('modalTitle').innerText = title;
-      document.getElementById('modalDesc').innerText = desc;
-      document.getElementById('quickViewModal').classList.remove('hidden');
-    }
-
-    function closeQuickView() {
-      document.getElementById('quickViewModal').classList.add('hidden');
-    }
-
-    function openLogoModal() {
-      document.getElementById('logoModal').classList.remove('hidden');
-    }
-
-    function closeLogoModal() {
-      document.getElementById('logoModal').classList.add('hidden');
-    }
-
-    function handleInquiry(e) {
-      e.preventDefault();
-      alert('Thank you! Your B2B inquiry has been successfully submitted to Mir\'s Core. Our export team will contact you shortly via email / WhatsApp.');
-      e.target.reset();
-    }
-
-    function handleNewsletter(e) {
-      e.preventDefault();
-      alert('Thank you for subscribing to Mir\'s Core catalog updates!');
-      e.target.reset();
-    }
-  </script>
-</body>
-</html>
-<!-- ==================== CUSTOMIZATION, SAMPLES & MOQ FLEXIBILITY SECTION ==================== -->
+  <!-- ==================== CUSTOMIZATION, SAMPLES & MOQ FLEXIBILITY SECTION ==================== -->
   <section class="py-20 bg-gradient-to-b from-cremeBg via-warmBeige/20 to-cremeBg border-y border-warmBeige">
     <div class="max-w-7xl mx-auto px-6">
       
@@ -664,3 +602,65 @@
 
     </div>
   </section>
+
+  <!-- ==================== LOGO FULLSCREEN MODAL ==================== -->
+  <div id="logoModal" class="fixed inset-0 z-50 hidden bg-deepText/90 backdrop-blur-md flex items-center justify-center p-4" onclick="closeLogoModal()">
+    <div class="relative max-w-md w-full bg-cardWhite p-8 rounded-3xl text-center space-y-4 shadow-2xl border-2 border-roseGold" onclick="event.stopPropagation()">
+      <button onclick="closeLogoModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-cremeBg flex items-center justify-center text-deepText hover:bg-roseGold hover:text-white transition">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img src="gym logo.jpeg" alt="Mir's Core Logo" class="w-32 h-32 rounded-xl object-cover mx-auto border-4 border-roseGold shadow-lg">
+      <h3 class="text-2xl font-serif font-bold text-deepText">Mir's Core</h3>
+      <p class="text-xs text-mutedText">Luxury Activewear B2B Manufacturer & Global Exporter.</p>
+      <div class="pt-2">
+        <a href="https://wa.me/923155239697" target="_blank" class="inline-block bg-roseGold text-white px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider shadow-md">Contact: +92 315 5239697</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    function openQuickView(imgSrc, title, desc) {
+      document.getElementById('modalImg').src = imgSrc;
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalDesc').innerText = desc;
+      document.getElementById('quickViewModal').classList.remove('hidden');
+    }
+
+    function closeQuickView() {
+      document.getElementById('quickViewModal').classList.add('hidden');
+    }
+
+    function openLogoModal() {
+      document.getElementById('logoModal').classList.remove('hidden');
+    }
+
+    function closeLogoModal() {
+      document.getElementById('logoModal').classList.add('hidden');
+    }
+
+    function handleInquiry(e) {
+      e.preventDefault();
+      alert('Thank you! Your B2B inquiry has been successfully submitted to Mir\'s Core. Our export team will contact you shortly via email / WhatsApp.');
+      e.target.reset();
+    }
+
+    function handleNewsletter(e) {
+      e.preventDefault();
+      alert('Thank you for subscribing to Mir\'s Core catalog updates!');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
