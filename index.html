@@ -1,666 +1,821 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mir's Core | Luxury Activewear B2B Manufacturer</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- FontAwesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- AOS Animation Library -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            cremeBg: '#f7f4ef',
-            warmBeige: '#eae3db',
-            cardWhite: '#ffffff',
-            roseGold: '#b76e79',
-            lightBrown: '#a48875',
-            softGray: '#8c857b',
-            deepText: '#2c2623',
-            mutedText: '#6e655f',
-            accentGold: '#c5a880'
-          },
-          fontFamily: {
-            serif: ['Playfair Display', 'serif'],
-            sans: ['Plus Jakarta Sans', 'sans-serif']
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mir's Core | Luxury Activewear Manufacturer & Exporter</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for professional icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Playfair Display for high-end serif titles and Plus Jakarta Sans for clean body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://aafonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        creme: '#F9F6F0',
+                        warmbeige: '#E6DFD5',
+                        rosegold: '#C5A059',
+                        rosegolddark: '#A6843D',
+                        charcoal: '#1A1A1A',
+                        cardwhite: '#FFFFFF',
+                        softgray: '#F3F0EA'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
-
-  <style>
-    body {
-      background-color: #f7f4ef;
-      color: #2c2623;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-    h1, h2, h3, h4, .font-serif {
-      font-family: 'Playfair Display', serif;
-    }
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #eae3db;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #b76e79;
-      border-radius: 4px;
-    }
-  </style>
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F9F6F0;
+            color: #1A1A1A;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom scrollbar for luxury feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F9F6F0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C5A059;
+            border-radius: 4px;
+        }
+    </style>
 </head>
-<body class="bg-cremeBg text-deepText antialiased selection:bg-roseGold selection:text-white">
+<body class="bg-creme text-charcoal antialiased selection:bg-rosegold selection:text-white">
 
-  <!-- ==================== HEADER / NAVIGATION ==================== -->
-  <header class="fixed top-0 left-0 w-full z-50 bg-cremeBg/90 backdrop-blur-md border-b border-roseGold/20 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      
-      <!-- Brand Logo & Name (Square Logo with rounded luxury corners) -->
-      <div class="flex items-center gap-3 cursor-pointer group" onclick="openLogoModal()">
-        <img src="gym logo.jpeg" alt="Mir's Core Logo" class="w-12 h-12 rounded-lg border-2 border-roseGold object-cover shadow-md group-hover:scale-105 transition">
-        <div>
-          <span class="text-xl font-bold font-serif tracking-wide text-deepText block leading-none">Mir's Core</span>
-          <span class="text-[10px] uppercase tracking-widest text-lightBrown font-semibold">Luxury Activewear B2B</span>
-        </div>
-      </div>
-
-      <!-- Desktop Navigation Menu -->
-      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-mutedText">
-        <a href="#home" class="hover:text-roseGold transition">Home</a>
-        <a href="#global-b2b" class="hover:text-roseGold transition">Global B2B</a>
-        <a href="#collections" class="hover:text-roseGold transition">Collections</a>
-        <a href="#customization" class="hover:text-roseGold transition">Customization</a>
-        <a href="#contact" class="hover:text-roseGold transition">Contact</a>
-      </nav>
-
-      <!-- Quick Inquiry / WhatsApp Button -->
-      <div class="flex items-center gap-4">
-        <a href="https://wa.me/923155239697?text=Hello%20Mir's%20Core,%20I%20am%20interested%20in%20B2B%20activewear%20manufacturing." target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-roseGold to-lightBrown text-white px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase shadow-lg hover:opacity-95 transition">
-          <i class="fa-brands fa-whatsapp text-sm"></i> +92 315 5239697
-        </a>
-        <button onclick="toggleMobileMenu()" class="md:hidden text-deepText text-2xl focus:outline-none">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </div>
-
+    <!-- Top Announcement Bar -->
+    <div class="bg-charcoal text-creme text-xs sm:text-sm py-2 px-4 text-center tracking-widest uppercase font-medium">
+        <span><i class="fa-solid fa-globe mr-2 text-rosegold"></i> Global B2B Manufacturer & Exporter — Low MOQ & Custom Private Labeling Available</span>
     </div>
 
-    <!-- Mobile Menu Dropdown -->
-    <div id="mobileMenu" class="hidden md:hidden bg-cardWhite border-b border-warmBeige px-6 py-4 space-y-3 shadow-xl">
-      <a href="#home" onclick="toggleMobileMenu()" class="block text-sm font-medium text-deepText hover:text-roseGold">Home</a>
-      <a href="#global-b2b" onclick="toggleMobileMenu()" class="block text-sm font-medium text-deepText hover:text-roseGold">Global B2B</a>
-      <a href="#collections" onclick="toggleMobileMenu()" class="block text-sm font-medium text-deepText hover:text-roseGold">Collections</a>
-      <a href="#customization" onclick="toggleMobileMenu()" class="block text-sm font-medium text-deepText hover:text-roseGold">Customization</a>
-      <a href="#contact" onclick="toggleMobileMenu()" class="block text-sm font-medium text-deepText hover:text-roseGold">Contact</a>
-    </div>
-  </header>
-
-  <!-- ==================== HERO SECTION ==================== -->
-  <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-cremeBg via-warmBeige/30 to-cremeBg">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      
-      <!-- Hero Text Content -->
-      <div class="lg:col-span-7 space-y-6" data-aos="fade-right">
-        <div class="inline-flex items-center gap-2 bg-cardWhite border border-roseGold/30 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest text-lightBrown shadow-sm">
-          <i class="fa-solid fa-globe text-roseGold"></i> Global B2B Manufacturer & Supplier
-        </div>
-        <h1 class="text-4xl md:text-6xl font-serif font-bold text-deepText leading-tight">
-          Elegance in Motion. <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-roseGold to-lightBrown">Uncompromising Luxury.</span>
-        </h1>
-        <p class="text-base md:text-lg text-mutedText max-w-xl font-light">
-          Crafting elite-tier gym wear, yoga wear, and activewear for adults and kids. Proudly offering <strong class="text-deepText font-medium">100% custom manufacturing</strong> with seamless global B2B shipping.
-        </p>
-        <div class="flex flex-wrap gap-4 pt-2">
-          <a href="#collections" class="bg-gradient-to-r from-roseGold to-lightBrown text-white px-8 py-3.5 rounded-full font-semibold text-sm tracking-wider uppercase shadow-xl hover:opacity-95 transition">
-            Explore Collections
-          </a>
-          <a href="https://wa.me/923155239697?text=Hello%20Mir's%20Core,%20I%20would%20like%20to%20request%20a%20B2B%20WhatsApp%20Quote." target="_blank" class="bg-cardWhite border border-roseGold/40 text-deepText px-8 py-3.5 rounded-full font-semibold text-sm tracking-wider uppercase shadow-md hover:bg-roseGold/5 transition flex items-center gap-2">
-            <i class="fa-brands fa-whatsapp text-roseGold"></i> B2B WhatsApp Quote
-          </a>
-        </div>
-      </div>
-
-      <!-- Hero Featured Image -->
-      <div class="lg:col-span-5 relative" data-aos="fade-left">
-        <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-cardWhite group">
-          <img src="gym (50)_3.jfif" alt="Mir's Core Luxury Activewear Showcase" class="w-full h-[420px] object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-deepText/60 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
-            <span class="text-xs uppercase tracking-widest text-accentGold font-semibold">B2B Custom Activewear</span>
-            <h3 class="text-xl font-serif font-bold">Excellence & Performance</h3>
-            <div class="flex items-center gap-4 mt-2 text-xs text-warmBeige">
-              <span><i class="fa-solid fa-truck text-roseGold"></i> Global Shipping</span>
-              <span><i class="fa-solid fa-check-circle text-roseGold"></i> 100% Custom</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==================== GLOBAL B2B SHIPPING SECTION ==================== -->
-  <section id="global-b2b" class="py-16 bg-cardWhite border-y border-warmBeige">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-2xl mx-auto mb-12 space-y-3" data-aos="fade-up">
-        <span class="text-xs uppercase tracking-widest text-roseGold font-semibold">Worldwide Delivery</span>
-        <h2 class="text-3xl font-serif font-bold text-deepText">Global B2B Shipping & Logistics</h2>
-        <p class="text-mutedText text-sm">We supply boutique brands, gym chains, and fitness studios worldwide with reliable door-to-door and port-to-port freight solutions.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-cremeBg p-8 rounded-2xl border border-warmBeige shadow-sm hover:border-roseGold transition" data-aos="fade-up" data-aos-delay="100">
-          <div class="w-12 h-12 rounded-xl bg-roseGold/10 flex items-center justify-center text-roseGold text-xl mb-6">
-            <i class="fa-solid fa-plane-departure"></i>
-          </div>
-          <h3 class="text-lg font-bold font-serif mb-2">Express Air Freight</h3>
-          <p class="text-sm text-mutedText">Fast dispatch via DHL, FedEx, and UPS for urgent samples and boutique production runs (3-5 business days worldwide).</p>
-        </div>
-
-        <div class="bg-cremeBg p-8 rounded-2xl border border-warmBeige shadow-sm hover:border-roseGold transition" data-aos="fade-up" data-aos-delay="200">
-          <div class="w-12 h-12 rounded-xl bg-roseGold/10 flex items-center justify-center text-roseGold text-xl mb-6">
-            <i class="fa-solid fa-ship"></i>
-          </div>
-          <h3 class="text-lg font-bold font-serif mb-2">Bulk Ocean Freight</h3>
-          <p class="text-sm text-mutedText">Cost-effective FCL and LCL container shipping for large-scale wholesale and distributor orders with full customs clearance support.</p>
-        </div>
-
-        <div class="bg-cremeBg p-8 rounded-2xl border border-warmBeige shadow-sm hover:border-roseGold transition" data-aos="fade-up" data-aos-delay="300">
-          <div class="w-12 h-12 rounded-xl bg-roseGold/10 flex items-center justify-center text-roseGold text-xl mb-6">
-            <i class="fa-solid fa-shield-halved"></i>
-          </div>
-          <h3 class="text-lg font-bold font-serif mb-2">Secure Packaging & QA</h3>
-          <p class="text-sm text-mutedText">Every single piece undergoes rigorous quality assurance and is packed securely in custom-branded biodegradable polybags.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== COLLECTIONS SECTION (Using exact image files & clean titles) ==================== -->
-  <section id="collections" class="py-20 max-w-7xl mx-auto px-6">
-    <div class="text-center max-w-2xl mx-auto mb-16 space-y-3" data-aos="fade-up">
-      <span class="text-xs uppercase tracking-widest text-roseGold font-semibold">Exquisite Craftsmanship</span>
-      <h2 class="text-3xl md:text-4xl font-serif font-bold text-deepText">Our Activewear Collections</h2>
-      <p class="text-mutedText text-sm">Explore our comprehensive adult and kid lines designed for ultimate flexibility, breathability, and luxurious aesthetics.</p>
-    </div>
-
-    <!-- Gallery Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      
-      <!-- Item 1 -->
-      <div class="bg-cardWhite rounded-2xl overflow-hidden border border-warmBeige shadow-sm hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="100">
-        <div class="relative h-80 overflow-hidden cursor-pointer" onclick="openQuickView('gym (41).jfif', 'Dark Blue Long-Sleeve Crop Set', 'Crafted from high-performance compression fabric with elegant back tie detail and matching leggings.')">
-          <img src="gym (41)_2.jfif" alt="Dark Blue Long-Sleeve Crop Set" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute top-4 right-4 bg-cremeBg/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest text-roseGold">Adult Line</div>
-        </div>
-        <div class="p-6 space-y-3">
-          <h3 class="font-serif font-bold text-lg text-deepText">Dark Blue Long-Sleeve Crop Set</h3>
-          <p class="text-xs text-mutedText leading-relaxed">Dark blue long-sleeve crop top and matching leggings with exquisite back tie detailing.</p>
-          <div class="pt-2 flex items-center justify-between">
-            <span class="text-xs text-lightBrown font-semibold uppercase tracking-widest">100% Custom B2B</span>
-            <button onclick="openQuickView('gym (41).jfif', 'Dark Blue Long-Sleeve Crop Set', 'Crafted from high-performance compression fabric with elegant back tie detail and matching leggings.')" class="text-xs text-roseGold font-bold hover:underline">Quick View <i class="fa-solid fa-arrow-right ml-1"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 2 -->
-      <div class="bg-cardWhite rounded-2xl overflow-hidden border border-warmBeige shadow-sm hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="200">
-        <div class="relative h-80 overflow-hidden cursor-pointer" onclick="openQuickView('gym (43).jfif', 'Kids Off-White & Blue Summer Set', 'Junior collection featuring off-white short-sleeve top and blue shorts with matching cap.')">
-          <img src="gym (43)_2.jfif" alt="Kids Off-White & Blue Summer Set" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute top-4 right-4 bg-cremeBg/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest text-roseGold">Kids Collection</div>
-        </div>
-        <div class="p-6 space-y-3">
-          <h3 class="font-serif font-bold text-lg text-deepText">Kids Off-White & Blue Summer Set</h3>
-          <p class="text-xs text-mutedText leading-relaxed">Off-white short-sleeve top and blue shorts paired with a matching cap for young athletes.</p>
-          <div class="pt-2 flex items-center justify-between">
-            <span class="text-xs text-lightBrown font-semibold uppercase tracking-widest">100% Custom B2B</span>
-            <button onclick="openQuickView('gym (43).jfif', 'Kids Off-White & Blue Summer Set', 'Junior collection featuring off-white short-sleeve top and blue shorts with matching cap.')" class="text-xs text-roseGold font-bold hover:underline">Quick View <i class="fa-solid fa-arrow-right ml-1"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 3 -->
-      <div class="bg-cardWhite rounded-2xl overflow-hidden border border-warmBeige shadow-sm hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="300">
-        <div class="relative h-80 overflow-hidden cursor-pointer" onclick="openQuickView('gym (44).jfif', 'Lilac Purple Biker Set', 'Light purple / lilac crop top and matching biker shorts designed for flexibility and studio workouts.')">
-          <img src="gym (44)_2.jfif" alt="Lilac Purple Biker Set" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute top-4 right-4 bg-cremeBg/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest text-roseGold">Adult Line</div>
-        </div>
-        <div class="p-6 space-y-3">
-          <h3 class="font-serif font-bold text-lg text-deepText">Lilac Purple Biker Set</h3>
-          <p class="text-xs text-mutedText leading-relaxed">Light purple / lilac crop top and matching high-waisted biker shorts for seamless comfort.</p>
-          <div class="pt-2 flex items-center justify-between">
-            <span class="text-xs text-lightBrown font-semibold uppercase tracking-widest">100% Custom B2B</span>
-            <button onclick="openQuickView('gym (44).jfif', 'Lilac Purple Biker Set', 'Light purple / lilac crop top and matching biker shorts designed for flexibility and studio workouts.')" class="text-xs text-roseGold font-bold hover:underline">Quick View <i class="fa-solid fa-arrow-right ml-1"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 4 -->
-      <div class="bg-cardWhite rounded-2xl overflow-hidden border border-warmBeige shadow-sm hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="100">
-        <div class="relative h-80 overflow-hidden cursor-pointer" onclick="openQuickView('gym (47).jfif', 'Kids Group Performance Collection', 'Kids group collection featuring dancing poses in vibrant custom outfits.')">
-          <img src="gym (47)_2.jfif" alt="Kids Group Performance Collection" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute top-4 right-4 bg-cremeBg/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest text-roseGold">Kids Collection</div>
-        </div>
-        <div class="p-6 space-y-3">
-          <h3 class="font-serif font-bold text-lg text-deepText">Kids Group Performance Collection</h3>
-          <p class="text-xs text-mutedText leading-relaxed">Dynamic kids group collection showcasing dancing poses with specialized active outfits.</p>
-          <div class="pt-2 flex items-center justify-between">
-            <span class="text-xs text-lightBrown font-semibold uppercase tracking-widest">100% Custom B2B</span>
-            <button onclick="openQuickView('gym (47).jfif', 'Kids Group Performance Collection', 'Kids group collection featuring dancing poses in vibrant custom outfits.')" class="text-xs text-roseGold font-bold hover:underline">Quick View <i class="fa-solid fa-arrow-right ml-1"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 5 -->
-      <div class="bg-cardWhite rounded-2xl overflow-hidden border border-warmBeige shadow-sm hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="200">
-        <div class="relative h-80 overflow-hidden cursor-pointer" onclick="openQuickView('gym (49).jfif', 'Kids Ruffled Skirt Ensemble', 'Kids collection featuring ruffled crop top and mauve/pink skirt for gymnastics and dance.')">
-          <img src="gym (49)_3.jfif" alt="Kids Ruffled Skirt Ensemble" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute top-4 right-4 bg-cremeBg/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest text-roseGold">Kids Collection</div>
-        </div>
-        <div class="p-6 space-y-3">
-          <h3 class="font-serif font-bold text-lg text-deepText">Kids Ruffled Skirt Ensemble</h3>
-          <p class="text-xs text-mutedText leading-relaxed">Ruffled crop top paired with a stylish mauve/pink active skirt designed for youth agility.</p>
-          <div class="pt-2 flex items-center justify-between">
-            <span class="text-xs text-lightBrown font-semibold uppercase tracking-widest">100% Custom B2B</span>
-            <button onclick="openQuickView('gym (49).jfif', 'Kids Ruffled Skirt Ensemble', 'Kids collection featuring ruffled crop top and mauve/pink skirt for gymnastics and dance.')" class="text-xs text-roseGold font-bold hover:underline">Quick View <i class="fa-solid fa-arrow-right ml-1"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 6 -->
-      <div class="bg-cardWhite rounded-2xl overflow-hidden border border-warmBeige shadow-sm hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="300">
-        <div class="relative h-80 overflow-hidden cursor-pointer" onclick="openQuickView('gym (50).jfif', 'Pure White Sports Bra & Legging Set', 'Pure white sports bra and matching white leggings set crafted from premium breathable yarn.')">
-          <img src="gym (50)_3.jfif" alt="Pure White Sports Bra & Legging Set" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute top-4 right-4 bg-cremeBg/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest text-roseGold">Adult Line</div>
-        </div>
-        <div class="p-6 space-y-3">
-          <h3 class="font-serif font-bold text-lg text-deepText">Pure White Sports Bra & Legging Set</h3>
-          <p class="text-xs text-mutedText leading-relaxed">Immaculate pure white sports bra and matching high-waisted shaping leggings.</p>
-          <div class="pt-2 flex items-center justify-between">
-            <span class="text-xs text-lightBrown font-semibold uppercase tracking-widest">100% Custom B2B</span>
-            <button onclick="openQuickView('gym (50).jfif', 'Pure White Sports Bra & Legging Set', 'Pure white sports bra and matching white leggings set crafted from premium breathable yarn.')" class="text-xs text-roseGold font-bold hover:underline">Quick View <i class="fa-solid fa-arrow-right ml-1"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 7 -->
-      <div class="bg-cardWhite rounded-2xl overflow-hidden border border-warmBeige shadow-sm hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="100">
-        <div class="relative h-80 overflow-hidden cursor-pointer" onclick="openQuickView('gym (52).jfif', 'Kids Mauve Tracksuit', 'Kids collection featuring mauve track suit / jogger pants and luxury jacket look.')">
-          <img src="gym (52)_3.jfif" alt="Kids Mauve Tracksuit" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute top-4 right-4 bg-cremeBg/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest text-roseGold">Kids Collection</div>
-        </div>
-        <div class="p-6 space-y-3">
-          <h3 class="font-serif font-bold text-lg text-deepText">Kids Mauve Tracksuit</h3>
-          <p class="text-xs text-mutedText leading-relaxed">Mauve track suit featuring comfortable jogger pants and a matching jacket look for youth.</p>
-          <div class="pt-2 flex items-center justify-between">
-            <span class="text-xs text-lightBrown font-semibold uppercase tracking-widest">100% Custom B2B</span>
-            <button onclick="openQuickView('gym (52).jfif', 'Kids Mauve Tracksuit', 'Kids collection featuring mauve track suit / jogger pants and luxury jacket look.')" class="text-xs text-roseGold font-bold hover:underline">Quick View <i class="fa-solid fa-arrow-right ml-1"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 8 -->
-      <div class="bg-cardWhite rounded-2xl overflow-hidden border border-warmBeige shadow-sm hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="200">
-        <div class="relative h-80 overflow-hidden cursor-pointer" onclick="openQuickView('gym (57).jfif', 'Kids Dark Gray Ribbed Seamless Set', 'Kids collection featuring dark gray ribbed sports bra and matching seamless leggings.')">
-          <img src="gym (57)_3.jfif" alt="Kids Dark Gray Ribbed Seamless Set" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute top-4 right-4 bg-cremeBg/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest text-roseGold">Kids Collection</div>
-        </div>
-        <div class="p-6 space-y-3">
-          <h3 class="font-serif font-bold text-lg text-deepText">Kids Dark Gray Ribbed Seamless Set</h3>
-          <p class="text-xs text-mutedText leading-relaxed">Dark gray ribbed sports bra and matching leggings designed for ultimate comfort and durability.</p>
-          <div class="pt-2 flex items-center justify-between">
-            <span class="text-xs text-lightBrown font-semibold uppercase tracking-widest">100% Custom B2B</span>
-            <button onclick="openQuickView('gym (57).jfif', 'Kids Dark Gray Ribbed Seamless Set', 'Kids collection featuring dark gray ribbed sports bra and matching seamless leggings.')" class="text-xs text-roseGold font-bold hover:underline">Quick View <i class="fa-solid fa-arrow-right ml-1"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 9 -->
-      <div class="bg-cardWhite rounded-2xl overflow-hidden border border-warmBeige shadow-sm hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="300">
-        <div class="relative h-80 overflow-hidden cursor-pointer" onclick="openQuickView('gym (32).jfif', 'Rose Gold Skirt-Style Active Set', 'Soft pink/rose golden crop top and matching skirt-style shorts with front and back view.')">
-          <img src="gym (32).jfif" alt="Rose Gold Skirt-Style Active Set" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute top-4 right-4 bg-cremeBg/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest text-roseGold">Adult Line</div>
-        </div>
-        <div class="p-6 space-y-3">
-          <h3 class="font-serif font-bold text-lg text-deepText">Rose Gold Skirt-Style Active Set</h3>
-          <p class="text-xs text-mutedText leading-relaxed">Soft pink/rose golden crop top and matching skirt-style shorts showcasing exceptional dual-view design.</p>
-          <div class="pt-2 flex items-center justify-between">
-            <span class="text-xs text-lightBrown font-semibold uppercase tracking-widest">100% Custom B2B</span>
-            <button onclick="openQuickView('gym (32).jfif', 'Rose Gold Skirt-Style Active Set', 'Soft pink/rose golden crop top and matching skirt-style shorts with front and back view.')" class="text-xs text-roseGold font-bold hover:underline">Quick View <i class="fa-solid fa-arrow-right ml-1"></i></button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==================== 100% CUSTOMIZATION & INQUIRY SECTION ==================== -->
-  <section id="customization" class="py-20 bg-cardWhite border-t border-warmBeige">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      
-      <div class="space-y-6" data-aos="fade-right">
-        <span class="text-xs uppercase tracking-widest text-roseGold font-semibold">B2B Private Label & Customization</span>
-        <h2 class="text-3xl font-serif font-bold text-deepText">Bring Your Activewear Vision to Life</h2>
-        <p class="text-mutedText text-sm leading-relaxed">
-          At Mir's Core, we provide full-package custom manufacturing. From fabric selection and custom Pantone dyeing to private label woven tags, embroidery, and custom biodegradable packaging, we handle everything globally.
-        </p>
-        <div class="space-y-4">
-          <div class="flex items-start gap-4">
-            <div class="w-8 h-8 rounded-full bg-roseGold/10 flex items-center justify-center text-roseGold shrink-0 font-bold">1</div>
-            <div>
-              <h4 class="font-bold text-sm text-deepText">Design & Tech Pack Consultation</h4>
-              <p class="text-xs text-mutedText">Send your sketches or reference images for precise pattern making.</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="w-8 h-8 rounded-full bg-roseGold/10 flex items-center justify-center text-roseGold shrink-0 font-bold">2</div>
-            <div>
-              <h4 class="font-bold text-sm text-deepText">Sample Development</h4>
-              <p class="text-xs text-mutedText">Rapid prototype sampling within 5-7 business days before bulk run.</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="w-8 h-8 rounded-full bg-roseGold/10 flex items-center justify-center text-roseGold shrink-0 font-bold">3</div>
-            <div>
-              <h4 class="font-bold text-sm text-deepText">Global Bulk Production & Shipping</h4>
-              <p class="text-xs text-mutedText">Strict quality control and secure door delivery worldwide.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Inquiry Form with Exact Phone and Email integration -->
-      <div id="contact" class="bg-cremeBg p-8 rounded-3xl border border-warmBeige shadow-xl" data-aos="fade-left">
-        <h3 class="text-2xl font-serif font-bold text-deepText mb-2">B2B Custom Inquiry</h3>
-        <p class="text-xs text-mutedText mb-6">Fill out your requirements or connect directly via phone & email.</p>
-        
-        <form onsubmit="handleInquiry(event)" class="space-y-4">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-[11px] uppercase tracking-wider font-semibold text-mutedText mb-1">Your Name</label>
-              <input type="text" required placeholder="John Doe" class="w-full bg-cardWhite border border-warmBeige px-4 py-2.5 rounded-xl text-xs text-deepText focus:outline-none focus:border-roseGold">
-            </div>
-            <div>
-              <label class="block text-[11px] uppercase tracking-wider font-semibold text-mutedText mb-1">Company / Brand</label>
-              <input type="text" required placeholder="Your Brand Name" class="w-full bg-cardWhite border border-warmBeige px-4 py-2.5 rounded-xl text-xs text-deepText focus:outline-none focus:border-roseGold">
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-[11px] uppercase tracking-wider font-semibold text-mutedText mb-1">Country / Phone (+92)</label>
-              <div class="flex gap-2">
-                <select class="bg-cardWhite border border-warmBeige px-2 py-2.5 rounded-xl text-xs text-deepText focus:outline-none">
-                  <option>PK +92</option>
-                  <option>US +1</option>
-                  <option>UK +44</option>
-                  <option>AE +971</option>
-                </select>
-                <input type="tel" required placeholder="315 5239697" class="w-full bg-cardWhite border border-warmBeige px-4 py-2.5 rounded-xl text-xs text-deepText focus:outline-none focus:border-roseGold">
-              </div>
-            </div>
-            <div>
-              <label class="block text-[11px] uppercase tracking-wider font-semibold text-mutedText mb-1">Email Address</label>
-              <input type="email" required placeholder="saleem.mir81509@gmail.com" class="w-full bg-cardWhite border border-warmBeige px-4 py-2.5 rounded-xl text-xs text-deepText focus:outline-none focus:border-roseGold">
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-[11px] uppercase tracking-wider font-semibold text-mutedText mb-1">Inquiry Details / Customization Notes</label>
-            <textarea rows="3" required placeholder="Specify estimated quantities, fabrics, and custom requirements..." class="w-full bg-cardWhite border border-warmBeige px-4 py-2.5 rounded-xl text-xs text-deepText focus:outline-none focus:border-roseGold"></textarea>
-          </div>
-
-          <button type="submit" class="w-full bg-gradient-to-r from-roseGold to-lightBrown text-white py-3.5 rounded-xl text-xs font-semibold uppercase tracking-wider shadow-lg hover:opacity-95 transition">
-            Submit B2B Inquiry
-          </button>
-        </form>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==================== LUXURIOUS FOOTER ==================== -->
-  <footer class="bg-deepText text-warmBeige pt-16 pb-12 border-t-4 border-roseGold">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
-      
-      <!-- Col 1: Brand -->
-      <div class="space-y-4">
-        <div class="flex items-center gap-3">
-          <img src="gym logo.jpeg" alt="Mir's Core Logo" class="w-10 h-10 rounded-lg border-2 border-roseGold object-cover">
-          <span class="text-xl font-bold font-serif text-white tracking-wide">Mir's Core</span>
-        </div>
-        <p class="text-xs text-warmBeige/70 leading-relaxed font-light">
-          Global premier B2B manufacturer of luxury activewear, yoga wear, and gymnastics apparel for adults and children worldwide.
-        </p>
-        <div class="flex items-center space-x-4 text-roseGold text-lg">
-          <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="#" class="hover:text-white transition"><i class="fa-brands fa-whatsapp"></i></a>
-        </div>
-      </div>
-
-      <!-- Col 2: Quick Links -->
-      <div>
-        <h4 class="text-sm font-bold uppercase tracking-wider text-white mb-4 font-serif">Quick Navigation</h4>
-        <ul class="space-y-2 text-xs text-warmBeige/70">
-          <li><a href="#home" class="hover:text-roseGold transition">Home Showcase</a></li>
-          <li><a href="#global-b2b" class="hover:text-roseGold transition">Global Logistics</a></li>
-          <li><a href="#collections" class="hover:text-roseGold transition">Activewear Collections</a></li>
-          <li><a href="#customization" class="hover:text-roseGold transition">Custom Private Label</a></li>
-        </ul>
-      </div>
-
-      <!-- Col 3: Direct Contact Info (With exact phone & email provided) -->
-      <div>
-        <h4 class="text-sm font-bold uppercase tracking-wider text-white mb-4 font-serif">Direct Inquiries</h4>
-        <ul class="space-y-3 text-xs text-warmBeige/70">
-          <li class="flex items-center gap-3">
-            <i class="fa-solid fa-phone text-roseGold"></i>
-            <a href="tel:+923155239697" class="hover:text-white transition">+92 315 5239697</a>
-          </li>
-          <li class="flex items-center gap-3">
-            <i class="fa-solid fa-envelope text-roseGold"></i>
-            <a href="mailto:saleem.mir81509@gmail.com" class="hover:text-white transition">saleem.mir81509@gmail.com</a>
-          </li>
-          <li class="flex items-start gap-3">
-            <i class="fa-solid fa-location-dot text-roseGold mt-0.5"></i>
-            <span>Global Manufacturing & Export Hub</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Col 4: Newsletter -->
-      <div>
-        <h4 class="text-sm font-bold uppercase tracking-wider text-white mb-4 font-serif">Catalog Updates</h4>
-        <p class="text-xs text-warmBeige/70 mb-3">Subscribe to receive our latest seasonal B2B lookbooks and fabric swatches.</p>
-        <form onsubmit="handleNewsletter(event)" class="flex gap-2">
-          <input type="email" required placeholder="Enter email..." class="bg-white/5 border border-white/20 px-3 py-2 rounded-lg text-xs text-white placeholder-warmBeige/40 focus:outline-none focus:border-roseGold w-full">
-          <button type="submit" class="bg-roseGold text-white px-4 py-2 rounded-lg text-xs font-semibold hover:opacity-95 transition">Join</button>
-        </form>
-      </div>
-
-    </div>
-
-    <div class="max-w-7xl mx-auto px-6 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-warmBeige/50 font-light">
-      <p>&copy; 2026 Mir's Core. All Rights Reserved. Crafted for Elite B2B Brands.</p>
-      <div class="flex space-x-6 mt-4 sm:mt-0">
-        <a href="#" class="hover:text-roseGold transition">Privacy Policy</a>
-        <a href="#" class="hover:text-roseGold transition">Terms of Supply</a>
-        <a href="#" class="hover:text-roseGold transition">Quality Assurance</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ==================== QUICK VIEW MODAL ==================== -->
-  <div id="quickViewModal" class="fixed inset-0 z-50 hidden bg-deepText/80 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="bg-cardWhite rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative animate-scaleUp border border-warmBeige">
-      <button onclick="closeQuickView()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-cremeBg flex items-center justify-center text-deepText hover:bg-roseGold hover:text-white transition shadow-md">
-        <i class="fa-solid fa-xmark text-lg"></i>
-      </button>
-      <div class="grid grid-cols-1 md:grid-cols-2">
-        <div class="h-80 md:h-full">
-          <img id="modalImg" src="" alt="Product Preview" class="w-full h-full object-cover">
-        </div>
-        <div class="p-8 flex flex-col justify-between space-y-4">
-          <div class="space-y-3">
-            <span class="text-[10px] uppercase tracking-widest text-roseGold font-semibold bg-cremeBg px-3 py-1 rounded-full border border-warmBeige">Mir's Core B2B Exclusive</span>
-            <h3 id="modalTitle" class="text-2xl font-serif font-bold text-deepText"></h3>
-            <p id="modalDesc" class="text-xs text-mutedText leading-relaxed"></p>
-          </div>
-          <div class="space-y-3 pt-4 border-t border-warmBeige">
-            <div class="flex items-center justify-between text-xs text-deepText font-semibold">
-              <span>Minimum Order Quantity:</span>
-              <span class="text-roseGold">100 Pieces / Style</span>
-            </div>
-            <a href="https://wa.me/923155239697?text=Hello%20Mir's%20Core,%20I%20want%20to%20order%20samples%20for%20this%20item." target="_blank" class="w-full block text-center bg-gradient-to-r from-roseGold to-lightBrown text-white py-3 rounded-xl text-xs font-semibold uppercase tracking-wider shadow-md hover:opacity-95 transition">
-              <i class="fa-brands fa-whatsapp mr-1"></i> Order Samples via WhatsApp
+    <!-- Main Sticky Navbar -->
+    <header id="navbar" class="sticky top-0 z-50 bg-creme/95 backdrop-blur-md border-b border-warmbeige transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <!-- Brand Logo from gym (7).jfif -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-rosegold shadow-md bg-charcoal flex items-center justify-center p-1">
+                    <img src="gym (7).jfif" alt="Mir's Core Logo" class="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/100x100/1A1A1A/C5A059?text=MC'">
+                </div>
+                <div>
+                    <span class="font-serif text-2xl sm:text-3xl font-bold tracking-wider text-charcoal block">MIR'S CORE</span>
+                    <span class="text-[10px] tracking-[0.3em] uppercase text-rosegold font-semibold block -mt-1">Luxury Activewear</span>
+                </div>
             </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- ==================== CUSTOMIZATION, SAMPLES & MOQ FLEXIBILITY SECTION ==================== -->
-  <section class="py-20 bg-gradient-to-b from-cremeBg via-warmBeige/20 to-cremeBg border-y border-warmBeige">
-    <div class="max-w-7xl mx-auto px-6">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3" data-aos="fade-up">
-        <span class="text-xs uppercase tracking-widest text-roseGold font-semibold">Tailored For Your Brand</span>
-        <h2 class="text-3xl md:text-4xl font-serif font-bold text-deepText">Complete Customization & Startup-Friendly MOQ</h2>
-        <p class="text-mutedText text-sm leading-relaxed">
-          Whether you are an emerging fitness startup or an established global gym brand, Mir's Core adapts to your exact production scale with uncompromising luxury standards.
-        </p>
-      </div>
 
-      <!-- 3 Key Feature Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        
-        <!-- Card 1: 100% Customization -->
-        <div class="bg-cardWhite p-8 rounded-3xl border border-warmBeige shadow-sm hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="100">
-          <div class="w-14 h-14 rounded-2xl bg-roseGold/10 flex items-center justify-center text-roseGold text-2xl mb-6 group-hover:bg-roseGold group-hover:text-white transition duration-300">
-            <i class="fa-solid fa-sliders"></i>
-          </div>
-          <h3 class="text-xl font-serif font-bold text-deepText mb-3">100% Full Customization</h3>
-          <p class="text-xs text-mutedText leading-relaxed">
-            From bespoke fabric selection (breathable ribbed, buttery-soft nylon-spandex, moisture-wicking fleece) and custom Pantone dyeing to private label woven neck tags, care labels, heat transfers, and custom hangtags.
-          </p>
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm tracking-widest uppercase">
+                <a href="#hero" class="text-charcoal hover:text-rosegold transition-colors">Home</a>
+                <a href="#collections" class="text-charcoal hover:text-rosegold transition-colors">Collections</a>
+                <a href="#customization" class="text-charcoal hover:text-rosegold transition-colors">Customization & MOQ</a>
+                <a href="#about" class="text-charcoal hover:text-rosegold transition-colors">About Us</a>
+                <a href="#contact" class="text-charcoal hover:text-rosegold transition-colors">Contact Us</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="https://wa.me/923155239697?text=Hello%20Mir's%20Core,%20I%20would%20like%20to%20inquire%20about%20bulk%20activewear%20manufacturing." target="_blank" class="bg-rosegold hover:bg-rosegolddark text-white px-6 py-3 rounded-full text-xs font-semibold tracking-widest uppercase transition-all duration-300 shadow-lg flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp Inquiry
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-charcoal text-2xl focus:outline-none p-2">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
 
-        <!-- Card 2: Rapid Sample Development -->
-        <div class="bg-cardWhite p-8 rounded-3xl border border-warmBeige shadow-sm hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="200">
-          <div class="w-14 h-14 rounded-2xl bg-roseGold/10 flex items-center justify-center text-roseGold text-2xl mb-6 group-hover:bg-roseGold group-hover:text-white transition duration-300">
-            <i class="fa-solid fa-box-open"></i>
-          </div>
-          <h3 class="text-xl font-serif font-bold text-deepText mb-3">Rapid Sample Availability</h3>
-          <p class="text-xs text-mutedText leading-relaxed">
-            We understand the importance of fit and quality verification before bulk production. Get custom prototype samples developed and shipped to your doorstep via DHL/FedEx within 5 to 7 business days.
-          </p>
+        <!-- Mobile Nav Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-creme border-b border-warmbeige px-6 py-6 space-y-4 shadow-xl">
+            <a href="#hero" class="block text-base font-medium uppercase tracking-wider text-charcoal hover:text-rosegold">Home</a>
+            <a href="#collections" class="block text-base font-medium uppercase tracking-wider text-charcoal hover:text-rosegold">Collections</a>
+            <a href="#customization" class="block text-base font-medium uppercase tracking-wider text-charcoal hover:text-rosegold">Customization & MOQ</a>
+            <a href="#about" class="block text-base font-medium uppercase tracking-wider text-charcoal hover:text-rosegold">About Us</a>
+            <a href="#contact" class="block text-base font-medium uppercase tracking-wider text-charcoal hover:text-rosegold">Contact Us</a>
+            <div class="pt-4 border-t border-warmbeige">
+                <a href="https://wa.me/923155239697?text=Hello%20Mir's%20Core,%20I%20would%20like%20to%20inquire%20about%20bulk%20activewear%20manufacturing." target="_blank" class="w-full bg-rosegold text-white py-3 rounded-full text-center text-xs font-semibold tracking-widest uppercase block shadow-md">
+                    <i class="fa-brands fa-whatsapp mr-2"></i> WhatsApp Inquiry
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-[85vh] flex items-center justify-center bg-charcoal text-creme overflow-hidden">
+        <!-- Background Image gym (40).jfif with luxury dark overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="gym (40).jfif" alt="Mir's Core Performance Team" class="w-full h-full object-cover object-center opacity-40 scale-105 animate-pulse duration-[10000ms]" onerror="this.src='https://placehold.co/1920x1080/1A1A1A/C5A059?text=Mir\'s+Core+Hero'">
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent"></div>
         </div>
 
-        <!-- Card 3: MOQ Flexibility -->
-        <div class="bg-cardWhite p-8 rounded-3xl border border-warmBeige shadow-sm hover:shadow-xl transition group" data-aos="fade-up" data-aos-delay="300">
-          <div class="w-14 h-14 rounded-2xl bg-roseGold/10 flex items-center justify-center text-roseGold text-2xl mb-6 group-hover:bg-roseGold group-hover:text-white transition duration-300">
-            <i class="fa-solid fa-scale-balanced"></i>
-          </div>
-          <h3 class="text-xl font-serif font-bold text-deepText mb-3">Ultimate MOQ Flexibility</h3>
-          <p class="text-xs text-mutedText leading-relaxed">
-            Struggling with high minimum order quantities elsewhere? We offer highly flexible MOQ options starting at low pieces per style/colorway, empowering boutique brands to launch collections without heavy financial overhead.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- Highlight Banner inside Section -->
-      <div class="bg-deepText text-warmBeige rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl border-2 border-roseGold/40" data-aos="zoom-in">
-        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div class="lg:col-span-8 space-y-3">
-            <span class="text-xs uppercase tracking-widest text-accentGold font-semibold">Ready To Scale Your Brand?</span>
-            <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">Let's Discuss Your Tech Packs & Quantities</h3>
-            <p class="text-xs text-warmBeige/80 max-w-xl leading-relaxed">
-              Connect directly with our export and manufacturing team via WhatsApp or email to get instant quotes, fabric swatches, and low-MOQ trial run details.
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-rosegold/20 border border-rosegold/50 text-rosegold text-xs tracking-[0.25em] uppercase font-semibold mb-6 backdrop-blur-sm">
+                B2B Premium Activewear Manufacturer
+            </span>
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                Crafting Excellence in <span class="italic font-normal text-rosegold">Luxury Activewear</span>
+            </h1>
+            <p class="text-base sm:text-xl text-warmbeige/90 max-w-3xl mx-auto font-light leading-relaxed mb-10">
+                Supplying global fitness brands, elite boutiques, and startup labels with bespoke athletic wear, seamless technical fabrics, custom Pantone dyeing, and private label excellence.
             </p>
-          </div>
-          <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-end">
-            <a href="https://wa.me/923155239697?text=Hello%20Mir's%20Core,%20I%20want%20to%20discuss%20customization%20and%20MOQ%20flexibility%20for%20my%20brand." target="_blank" class="bg-roseGold text-white px-6 py-3.5 rounded-xl font-semibold text-xs tracking-wider uppercase shadow-lg hover:opacity-95 transition text-center flex items-center justify-center gap-2">
-              <i class="fa-brands fa-whatsapp text-sm"></i> Chat on WhatsApp
-            </a>
-            <a href="mailto:saleem.mir81509@gmail.com" class="bg-white/10 border border-white/20 text-white px-6 py-3.5 rounded-xl font-semibold text-xs tracking-wider uppercase hover:bg-white/20 transition text-center flex items-center justify-center gap-2">
-              <i class="fa-solid fa-envelope text-sm"></i> Send Email Inquiry
-            </a>
-          </div>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <a href="#collections" class="w-full sm:w-auto bg-rosegold hover:bg-rosegolddark text-white px-8 py-4 rounded-full text-sm font-semibold tracking-widest uppercase transition-all duration-300 shadow-2xl flex items-center justify-center gap-3">
+                    Explore Collections <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="w-full sm:w-auto border border-creme/40 hover:border-rosegold hover:text-rosegold text-creme px-8 py-4 rounded-full text-sm font-semibold tracking-widest uppercase transition-all duration-300 backdrop-blur-sm">
+                    Request Wholesale Quote
+                </a>
+            </div>
+
+            <!-- Key Trust Badges -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-12 border-t border-creme/10 text-left">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-rosegold/20 flex items-center justify-center text-rosegold flex-shrink-0">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs uppercase tracking-wider font-bold text-creme">Premium Quality</h4>
+                        <p class="text-[11px] text-warmbeige/70">Engineered Luxury Fabrics</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-rosegold/20 flex items-center justify-center text-rosegold flex-shrink-0">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs uppercase tracking-wider font-bold text-creme">100% Custom</h4>
+                        <p class="text-[11px] text-warmbeige/70">Custom Logos & Tags</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-rosegold/20 flex items-center justify-center text-rosegold flex-shrink-0">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs uppercase tracking-wider font-bold text-creme">Express Sampling</h4>
+                        <p class="text-[11px] text-warmbeige/70">5-7 Days via DHL</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-rosegold/20 flex items-center justify-center text-rosegold flex-shrink-0">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs uppercase tracking-wider font-bold text-creme">Low MOQ Support</h4>
+                        <p class="text-[11px] text-warmbeige/70">Ideal for Startups & Brands</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- Collections Section -->
+    <section id="collections" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-rosegold text-xs tracking-[0.3em] uppercase font-semibold block mb-3">Bespoke Portfolio</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight mb-4">Our Signature Collections</h2>
+            <p class="text-charcoal/70 text-sm sm:text-base font-light">
+                Carefully curated activewear lines engineered for adult performance, tennis elegance, studio comfort, tracksuits, and elite youth athletics.
+            </p>
 
-  <!-- ==================== LOGO FULLSCREEN MODAL ==================== -->
-  <div id="logoModal" class="fixed inset-0 z-50 hidden bg-deepText/90 backdrop-blur-md flex items-center justify-center p-4" onclick="closeLogoModal()">
-    <div class="relative max-w-md w-full bg-cardWhite p-8 rounded-3xl text-center space-y-4 shadow-2xl border-2 border-roseGold" onclick="event.stopPropagation()">
-      <button onclick="closeLogoModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-cremeBg flex items-center justify-center text-deepText hover:bg-roseGold hover:text-white transition">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-      <img src="gym logo.jpeg" alt="Mir's Core Logo" class="w-32 h-32 rounded-xl object-cover mx-auto border-4 border-roseGold shadow-lg">
-      <h3 class="text-2xl font-serif font-bold text-deepText">Mir's Core</h3>
-      <p class="text-xs text-mutedText">Luxury Activewear B2B Manufacturer & Global Exporter.</p>
-      <div class="pt-2">
-        <a href="https://wa.me/923155239697" target="_blank" class="inline-block bg-roseGold text-white px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider shadow-md">Contact: +92 315 5239697</a>
-      </div>
-    </div>
-  </div>
+            <!-- Category Filter Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mt-8">
+                <button onclick="filterCollection('all')" class="filter-btn active-tab px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-charcoal text-creme transition-all duration-300 shadow-md">All Collections</button>
+                <button onclick="filterCollection('adult')" class="filter-btn px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-warmbeige/60 text-charcoal hover:bg-charcoal hover:text-creme transition-all duration-300">Adult Activewear & Sets</button>
+                <button onclick="filterCollection('tracksuit')" class="filter-btn px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-warmbeige/60 text-charcoal hover:bg-charcoal hover:text-creme transition-all duration-300">Unisex & Tracksuits</button>
+                <button onclick="filterCollection('kids')" class="filter-btn px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-warmbeige/60 text-charcoal hover:bg-charcoal hover:text-creme transition-all duration-300">Kids Performance Line</button>
+            </div>
+        </div>
 
-  <!-- AOS Script -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800,
-      once: true
-    });
+        <!-- Collections Grid -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('hidden');
-    }
+            <!-- Item 1: gym (1).jfif -->
+            <div class="product-card group bg-cardwhite rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-warmbeige transition-all duration-500" data-category="adult">
+                <div class="relative h-96 overflow-hidden bg-softgray">
+                    <img src="gym (1).jfif" alt="Yellow Plated Pleated Tennis Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x800/E6DFD5/1A1A1A?text=Tennis+Set'">
+                    <span class="absolute top-4 left-4 bg-charcoal/80 backdrop-blur-md text-creme text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Adult Activewear</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 group-hover:text-rosegold transition-colors">Yellow Plated Pleated Tennis Set</h3>
+                    <p class="text-xs text-charcoal/70 font-light mb-4 line-clamp-2">High-performance moisture-wicking fabric with dual-layer skirt and structured supportive racerback crop top.</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-softgray">
+                        <span class="text-xs font-semibold tracking-widest uppercase text-rosegold">Wholesale / Custom</span>
+                        <a href="https://wa.me/923155239697?text=Hello,%20I%20am%20interested%20in%20Yellow%20Plated%20Pleated%20Tennis%20Set%20(gym%201.jfif)" target="_blank" class="bg-charcoal hover:bg-rosegold text-creme px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors">
+                            Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-    function openQuickView(imgSrc, title, desc) {
-      document.getElementById('modalImg').src = imgSrc;
-      document.getElementById('modalTitle').innerText = title;
-      document.getElementById('modalDesc').innerText = desc;
-      document.getElementById('quickViewModal').classList.remove('hidden');
-    }
+            <!-- Item 2: gym (5).jfif -->
+            <div class="product-card group bg-cardwhite rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-warmbeige transition-all duration-500" data-category="adult">
+                <div class="relative h-96 overflow-hidden bg-softgray">
+                    <img src="gym (5).jfif" alt="Rose Gold Metallic One-Shoulder Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x800/E6DFD5/1A1A1A?text=Rose+Gold+Set'">
+                    <span class="absolute top-4 left-4 bg-charcoal/80 backdrop-blur-md text-creme text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Adult Activewear</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 group-hover:text-rosegold transition-colors">Rose Gold Metallic One-Shoulder Set</h3>
+                    <p class="text-xs text-charcoal/70 font-light mb-4 line-clamp-2">Luxurious metallic gloss sheen finish with embossed custom brand logo detailing and 4-way stretch support.</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-softgray">
+                        <span class="text-xs font-semibold tracking-widest uppercase text-rosegold">Wholesale / Custom</span>
+                        <a href="https://wa.me/923155239697?text=Hello,%20I%20am%20interested%20in%20Rose%20Gold%20Metallic%20One-Shoulder%20Set%20(gym%205.jfif)" target="_blank" class="bg-charcoal hover:bg-rosegold text-creme px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors">
+                            Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-    function closeQuickView() {
-      document.getElementById('quickViewModal').classList.add('hidden');
-    }
+            <!-- Item 3: gym (10).jfif -->
+            <div class="product-card group bg-cardwhite rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-warmbeige transition-all duration-500" data-category="adult">
+                <div class="relative h-96 overflow-hidden bg-softgray">
+                    <img src="gym (10).jfif" alt="Ivory Open-Back Long-Sleeve Crop Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x800/E6DFD5/1A1A1A?text=Ivory+Open+Back'">
+                    <span class="absolute top-4 left-4 bg-charcoal/80 backdrop-blur-md text-creme text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Adult Studio & Yoga</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 group-hover:text-rosegold transition-colors">Ivory Open-Back Long-Sleeve Crop Set</h3>
+                    <p class="text-xs text-charcoal/70 font-light mb-4 line-clamp-2">Breathable ribbed seamless fabric featuring elegant open-back cutouts and thumbholes for superior studio performance.</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-softgray">
+                        <span class="text-xs font-semibold tracking-widest uppercase text-rosegold">Wholesale / Custom</span>
+                        <a href="https://wa.me/923155239697?text=Hello,%20I%20am%20interested%20in%20Ivory%20Open-Back%20Long-Sleeve%20Crop%20Set%20(gym%2010.jfif)" target="_blank" class="bg-charcoal hover:bg-rosegold text-creme px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors">
+                            Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-    function openLogoModal() {
-      document.getElementById('logoModal').classList.remove('hidden');
-    }
+            <!-- Item 4: gym (14).jfif -->
+            <div class="product-card group bg-cardwhite rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-warmbeige transition-all duration-500" data-category="adult">
+                <div class="relative h-96 overflow-hidden bg-softgray">
+                    <img src="gym (14).jfif" alt="Rust Orange Zip-Collar Track Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x800/E6DFD5/1A1A1A?text=Rust+Orange+Track+Set'">
+                    <span class="absolute top-4 left-4 bg-charcoal/80 backdrop-blur-md text-creme text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Adult Performance</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 group-hover:text-rosegold transition-colors">Rust Orange Zip-Collar Track Set</h3>
+                    <p class="text-xs text-charcoal/70 font-light mb-4 line-clamp-2">High-neck zip crop jacket paired with high-waisted seamless leggings and custom embossed brand leather patch.</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-softgray">
+                        <span class="text-xs font-semibold tracking-widest uppercase text-rosegold">Wholesale / Custom</span>
+                        <a href="https://wa.me/923155239697?text=Hello,%20I%20am%20interested%20in%20Rust%20Orange%20Zip-Collar%20Track%20Set%20(gym%2014.jfif)" target="_blank" class="bg-charcoal hover:bg-rosegold text-creme px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors">
+                            Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-    function closeLogoModal() {
-      document.getElementById('logoModal').classList.add('hidden');
-    }
+            <!-- Item 5: gym (28).jfif -->
+            <div class="product-card group bg-cardwhite rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-warmbeige transition-all duration-500" data-category="tracksuit">
+                <div class="relative h-96 overflow-hidden bg-softgray">
+                    <img src="gym (28).jfif" alt="Charcoal Seamless Athletic Tracksuit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x800/E6DFD5/1A1A1A?text=Charcoal+Tracksuit'">
+                    <span class="absolute top-4 left-4 bg-charcoal/80 backdrop-blur-md text-creme text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Unisex & Tracksuits</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 group-hover:text-rosegold transition-colors">Charcoal Seamless Athletic Tracksuit</h3>
+                    <p class="text-xs text-charcoal/70 font-light mb-4 line-clamp-2">Unisex tailored fit engineered with lightweight fleece-backed performance knit for maximum warmth and athletic flexibility.</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-softgray">
+                        <span class="text-xs font-semibold tracking-widest uppercase text-rosegold">Wholesale / Custom</span>
+                        <a href="https://wa.me/923155239697?text=Hello,%20I%20am%20interested%20in%20Charcoal%20Seamless%20Athletic%20Tracksuit%20(gym%2028.jfif)" target="_blank" class="bg-charcoal hover:bg-rosegold text-creme px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors">
+                            Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-    function handleInquiry(e) {
-      e.preventDefault();
-      alert('Thank you! Your B2B inquiry has been successfully submitted to Mir\'s Core. Our export team will contact you shortly via email / WhatsApp.');
-      e.target.reset();
-    }
+            <!-- Item 6: gym (29).jfif -->
+            <div class="product-card group bg-cardwhite rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-warmbeige transition-all duration-500" data-category="adult">
+                <div class="relative h-96 overflow-hidden bg-softgray">
+                    <img src="gym (29).jfif" alt="Emerald Green Cutout Sports Bra Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x800/E6DFD5/1A1A1A?text=Emerald+Green+Set'">
+                    <span class="absolute top-4 left-4 bg-charcoal/80 backdrop-blur-md text-creme text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Adult Activewear</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 group-hover:text-rosegold transition-colors">Emerald Green Cutout Sports Bra Set</h3>
+                    <p class="text-xs text-charcoal/70 font-light mb-4 line-clamp-2">Ribbed performance fabric featuring sophisticated dual chest cutouts and contour sculpting high-waist leggings.</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-softgray">
+                        <span class="text-xs font-semibold tracking-widest uppercase text-rosegold">Wholesale / Custom</span>
+                        <a href="https://wa.me/923155239697?text=Hello,%20I%20am%20interested%20in%20Emerald%20Green%20Cutout%20Sports%20Bra%20Set%20(gym%2029.jfif)" target="_blank" class="bg-charcoal hover:bg-rosegold text-creme px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors">
+                            Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-    function handleNewsletter(e) {
-      e.preventDefault();
-      alert('Thank you for subscribing to Mir\'s Core catalog updates!');
-      e.target.reset();
-    }
-  </script>
+            <!-- Item 7: gym (30).jfif -->
+            <div class="product-card group bg-cardwhite rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-warmbeige transition-all duration-500" data-category="adult">
+                <div class="relative h-96 overflow-hidden bg-softgray">
+                    <img src="gym (30).jfif" alt="Mauve Flare Pant & Tank Ensemble" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x800/E6DFD5/1A1A1A?text=Mauve+Flare+Pants'">
+                    <span class="absolute top-4 left-4 bg-charcoal/80 backdrop-blur-md text-creme text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Adult Leisure & Yoga</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 group-hover:text-rosegold transition-colors">Mauve Flare Pant & Tank Ensemble</h3>
+                    <p class="text-xs text-charcoal/70 font-light mb-4 line-clamp-2">Butter-soft ribbed flare yoga pants paired with a tailored charcoal high-neck tank for ultimate everyday luxury.</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-softgray">
+                        <span class="text-xs font-semibold tracking-widest uppercase text-rosegold">Wholesale / Custom</span>
+                        <a href="https://wa.me/923155239697?text=Hello,%20I%20am%20interested%20in%20Mauve%20Flare%20Pant%20&%20Tank%20Ensemble%20(gym%2030.jfif)" target="_blank" class="bg-charcoal hover:bg-rosegold text-creme px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors">
+                            Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 8: gym (32).jfif -->
+            <div class="product-card group bg-cardwhite rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-warmbeige transition-all duration-500" data-category="adult">
+                <div class="relative h-96 overflow-hidden bg-softgray">
+                    <img src="gym (32).jfif" alt="Blush Pink Skirt-Style Active Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x800/E6DFD5/1A1A1A?text=Blush+Pink+Skort'">
+                    <span class="absolute top-4 left-4 bg-charcoal/80 backdrop-blur-md text-creme text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Adult Activewear</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 group-hover:text-rosegold transition-colors">Blush Pink Skirt-Style Active Set</h3>
+                    <p class="text-xs text-charcoal/70 font-light mb-4 line-clamp-2">Dual-view athletic skort with built-in compression shorts and matching low-profile scoop crop top.</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-softgray">
+                        <span class="text-xs font-semibold tracking-widest uppercase text-rosegold">Wholesale / Custom</span>
+                        <a href="https://wa.me/923155239697?text=Hello,%20I%20am%20interested%20in%20Blush%20Pink%20Skirt-Style%20Active%20Set%20(gym%2032.jfif)" target="_blank" class="bg-charcoal hover:bg-rosegold text-creme px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors">
+                            Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 9: gym (34).jfif -->
+            <div class="product-card group bg-cardwhite rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-warmbeige transition-all duration-500" data-category="tracksuit">
+                <div class="relative h-96 overflow-hidden bg-softgray">
+                    <img src="gym (34).jfif" alt="Camel Gold Full-Zip Tracksuit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x800/E6DFD5/1A1A1A?text=Camel+Gold+Tracksuit'">
+                    <span class="absolute top-4 left-4 bg-charcoal/80 backdrop-blur-md text-creme text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Unisex & Tracksuits</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 group-hover:text-rosegold transition-colors">Camel Gold Full-Zip Tracksuit</h3>
+                    <p class="text-xs text-charcoal/70 font-light mb-4 line-clamp-2">Executive warm-up full-zip jacket and tailored matching trousers crafted with premium cotton-elastane blend.</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-softgray">
+                        <span class="text-xs font-semibold tracking-widest uppercase text-rosegold">Wholesale / Custom</span>
+                        <a href="https://wa.me/923155239697?text=Hello,%20I%20am%20interested%20in%20Camel%20Gold%20Full-Zip%20Tracksuit%20(gym%2034.jfif)" target="_blank" class="bg-charcoal hover:bg-rosegold text-creme px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors">
+                            Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 10: gym (37).jfif -->
+            <div class="product-card group bg-cardwhite rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-warmbeige transition-all duration-500" data-category="adult">
+                <div class="relative h-96 overflow-hidden bg-softgray">
+                    <img src="gym (37).jfif" alt="Espresso Ribbed Performance Bra Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x800/E6DFD5/1A1A1A?text=Espresso+Bra+Set'">
+                    <span class="absolute top-4 left-4 bg-charcoal/80 backdrop-blur-md text-creme text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Adult Activewear</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 group-hover:text-rosegold transition-colors">Espresso Ribbed Performance Bra Set</h3>
+                    <p class="text-xs text-charcoal/70 font-light mb-4 line-clamp-2">Rich espresso brown tone with heavy-duty ribbed compression support for high-impact training and studio workouts.</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-softgray">
+                        <span class="text-xs font-semibold tracking-widest uppercase text-rosegold">Wholesale / Custom</span>
+                        <a href="https://wa.me/923155239697?text=Hello,%20I%20am%20interested%20in%20Espresso%20Ribbed%20Performance%20Bra%20Set%20(gym%2037.jfif)" target="_blank" class="bg-charcoal hover:bg-rosegold text-creme px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors">
+                            Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 11: gym (38).jfif -->
+            <div class="product-card group bg-cardwhite rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-warmbeige transition-all duration-500" data-category="kids">
+                <div class="relative h-96 overflow-hidden bg-softgray">
+                    <img src="gym (38).jfif" alt="Kids Sunshine Yellow Athletic Ensemble" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x800/E6DFD5/1A1A1A?text=Kids+Yellow+Ensemble'">
+                    <span class="absolute top-4 left-4 bg-charcoal/80 backdrop-blur-md text-creme text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Kids Performance Line</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 group-hover:text-rosegold transition-colors">Kids Sunshine Yellow Athletic Ensemble</h3>
+                    <p class="text-xs text-charcoal/70 font-light mb-4 line-clamp-2">Junior activewear line featuring soft anti-chafing cotton-spandex blend designed for young dance and sports enthusiasts.</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-softgray">
+                        <span class="text-xs font-semibold tracking-widest uppercase text-rosegold">Wholesale / Custom</span>
+                        <a href="https://wa.me/923155239697?text=Hello,%20I%20am%20interested%20in%20Kids%20Sunshine%20Yellow%20Athletic%20Ensemble%20(gym%2038.jfif)" target="_blank" class="bg-charcoal hover:bg-rosegold text-creme px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors">
+                            Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 12: gym (41).jfif -->
+            <div class="product-card group bg-cardwhite rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-warmbeige transition-all duration-500" data-category="adult">
+                <div class="relative h-96 overflow-hidden bg-softgray">
+                    <img src="gym (41).jfif" alt="Navy Blue Wrap-Tie Crop & Legging Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x800/E6DFD5/1A1A1A?text=Navy+Wrap+Set'">
+                    <span class="absolute top-4 left-4 bg-charcoal/80 backdrop-blur-md text-creme text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Adult Activewear</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 group-hover:text-rosegold transition-colors">Navy Blue Wrap-Tie Crop & Legging Set</h3>
+                    <p class="text-xs text-charcoal/70 font-light mb-4 line-clamp-2">Deep midnight navy tone with stylish waist wrap-tie straps and seamless high-waisted performance tights.</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-softgray">
+                        <span class="text-xs font-semibold tracking-widest uppercase text-rosegold">Wholesale / Custom</span>
+                        <a href="https://wa.me/923155239697?text=Hello,%20I%20am%20interested%20in%20Navy%20Blue%20Wrap-Tie%20Crop%20&%20Legging%20Set%20(gym%2041.jfif)" target="_blank" class="bg-charcoal hover:bg-rosegold text-creme px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors">
+                            Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 13: gym (43).jfif -->
+            <div class="product-card group bg-cardwhite rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-warmbeige transition-all duration-500" data-category="adult">
+                <div class="relative h-96 overflow-hidden bg-softgray">
+                    <img src="gym (43).jfif" alt="Teal Activewear & Matching Towel Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x800/E6DFD5/1A1A1A?text=Teal+Active+Set'">
+                    <span class="absolute top-4 left-4 bg-charcoal/80 backdrop-blur-md text-creme text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Adult Activewear</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 group-hover:text-rosegold transition-colors">Teal Activewear & Matching Towel Set</h3>
+                    <p class="text-xs text-charcoal/70 font-light mb-4 line-clamp-2">Vibrant oceanic teal cropped top and shorts set paired with custom branded ultra-absorbent gym accessories.</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-softgray">
+                        <span class="text-xs font-semibold tracking-widest uppercase text-rosegold">Wholesale / Custom</span>
+                        <a href="https://wa.me/923155239697?text=Hello,%20I%20am%20interested%20in%20Teal%20Activewear%20&%20Matching%20Towel%20Set%20(gym%2043.jfif)" target="_blank" class="bg-charcoal hover:bg-rosegold text-creme px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors">
+                            Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 14: gym (44).jfif -->
+            <div class="product-card group bg-cardwhite rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-warmbeige transition-all duration-500" data-category="adult">
+                <div class="relative h-96 overflow-hidden bg-softgray">
+                    <img src="gym (44).jfif" alt="Lavender Seamless Training Short Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x800/E6DFD5/1A1A1A?text=Lavender+Short+Set'">
+                    <span class="absolute top-4 left-4 bg-charcoal/80 backdrop-blur-md text-creme text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Adult Activewear</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 group-hover:text-rosegold transition-colors">Lavender Seamless Training Short Set</h3>
+                    <p class="text-xs text-charcoal/70 font-light mb-4 line-clamp-2">Pastel lavender hue with breathable contour knitting and sweat-wicking technical elastane yarns.</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-softgray">
+                        <span class="text-xs font-semibold tracking-widest uppercase text-rosegold">Wholesale / Custom</span>
+                        <a href="https://wa.me/923155239697?text=Hello,%20I%20am%20interested%20in%20Lavender%20Seamless%20Training%20Short%20Set%20(gym%2044.jfif)" target="_blank" class="bg-charcoal hover:bg-rosegold text-creme px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors">
+                            Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 15: gym (45).jfif -->
+            <div class="product-card group bg-cardwhite rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-warmbeige transition-all duration-500" data-category="kids">
+                <div class="relative h-96 overflow-hidden bg-softgray">
+                    <img src="gym (45).jfif" alt="Junior Elite Family & Kids Collection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x800/E6DFD5/1A1A1A?text=Kids+Collection'">
+                    <span class="absolute top-4 left-4 bg-charcoal/80 backdrop-blur-md text-creme text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Kids Performance Line</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 group-hover:text-rosegold transition-colors">Junior Elite Family & Kids Collection</h3>
+                    <p class="text-xs text-charcoal/70 font-light mb-4 line-clamp-2">Matching junior activewear sets mirroring adult luxury aesthetics for youth academies and family fitness brands.</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-softgray">
+                        <span class="text-xs font-semibold tracking-widest uppercase text-rosegold">Wholesale / Custom</span>
+                        <a href="https://wa.me/923155239697?text=Hello,%20I%20am%20interested%20in%20Junior%20Elite%20Family%20&%20Kids%20Collection%20(gym%2045.jfif)" target="_blank" class="bg-charcoal hover:bg-rosegold text-creme px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors">
+                            Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 16: gym (47).jfif -->
+            <div class="product-card group bg-cardwhite rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-warmbeige transition-all duration-500" data-category="kids">
+                <div class="relative h-96 overflow-hidden bg-softgray">
+                    <img src="gym (47).jfif" alt="Youth Performance Dance & Gym Wear" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x800/E6DFD5/1A1A1A?text=Youth+Dance+Wear'">
+                    <span class="absolute top-4 left-4 bg-charcoal/80 backdrop-blur-md text-creme text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Kids Performance Line</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 group-hover:text-rosegold transition-colors">Youth Performance Dance & Gym Wear</h3>
+                    <p class="text-xs text-charcoal/70 font-light mb-4 line-clamp-2">Flexible, lightweight outfits designed specifically for young dancers, gymnasts, and active kids.</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-softgray">
+                        <span class="text-xs font-semibold tracking-widest uppercase text-rosegold">Wholesale / Custom</span>
+                        <a href="https://wa.me/923155239697?text=Hello,%20I%20am%20interested%20in%20Youth%20Performance%20Dance%20&%20Gym%20Wear%20(gym%2047.jfif)" target="_blank" class="bg-charcoal hover:bg-rosegold text-creme px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors">
+                            Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 17: gym (49).jfif -->
+            <div class="product-card group bg-cardwhite rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-warmbeige transition-all duration-500" data-category="adult">
+                <div class="relative h-96 overflow-hidden bg-softgray">
+                    <img src="gym (49).jfif" alt="Rose Quartz Tennis Skort Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x800/E6DFD5/1A1A1A?text=Rose+Quartz+Set'">
+                    <span class="absolute top-4 left-4 bg-charcoal/80 backdrop-blur-md text-creme text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Adult Activewear</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 group-hover:text-rosegold transition-colors">Rose Quartz Tennis Skort Set</h3>
+                    <p class="text-xs text-charcoal/70 font-light mb-4 line-clamp-2">Delicate rose quartz tone engineered with anti-static pleated fabric and secure ball pocket shorts underneath.</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-softgray">
+                        <span class="text-xs font-semibold tracking-widest uppercase text-rosegold">Wholesale / Custom</span>
+                        <a href="https://wa.me/923155239697?text=Hello,%20I%20am%20interested%20in%20Rose%20Quartz%20Tennis%20Skort%20Set%20(gym%2049.jfif)" target="_blank" class="bg-charcoal hover:bg-rosegold text-creme px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors">
+                            Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 18: gym (50).jfif -->
+            <div class="product-card group bg-cardwhite rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-warmbeige transition-all duration-500" data-category="adult">
+                <div class="relative h-96 overflow-hidden bg-softgray">
+                    <img src="gym (50).jfif" alt="Pure White Luxury Studio Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x800/E6DFD5/1A1A1A?text=Pure+White+Set'">
+                    <span class="absolute top-4 left-4 bg-charcoal/80 backdrop-blur-md text-creme text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Adult Activewear</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 group-hover:text-rosegold transition-colors">Pure White Luxury Studio Set</h3>
+                    <p class="text-xs text-charcoal/70 font-light mb-4 line-clamp-2">High-opacity pure white seamless leggings and padded sports bra designed with stain-resistant technical yarn.</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-softgray">
+                        <span class="text-xs font-semibold tracking-widest uppercase text-rosegold">Wholesale / Custom</span>
+                        <a href="https://wa.me/923155239697?text=Hello,%20I%20am%20interested%20in%20Pure%20White%20Luxury%20Studio%20Set%20(gym%2050.jfif)" target="_blank" class="bg-charcoal hover:bg-rosegold text-creme px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors">
+                            Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 19: gym (52).jfif -->
+            <div class="product-card group bg-cardwhite rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-warmbeige transition-all duration-500" data-category="tracksuit">
+                <div class="relative h-96 overflow-hidden bg-softgray">
+                    <img src="gym (52).jfif" alt="Taupe Lounge & Tracksuit Ensemble" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x800/E6DFD5/1A1A1A?text=Taupe+Tracksuit'">
+                    <span class="absolute top-4 left-4 bg-charcoal/80 backdrop-blur-md text-creme text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Unisex & Tracksuits</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 group-hover:text-rosegold transition-colors">Taupe Lounge & Tracksuit Ensemble</h3>
+                    <p class="text-xs text-charcoal/70 font-light mb-4 line-clamp-2">Sophisticated neutral taupe tracksuit crafted for airport style, luxury travel, and premium athleisure wear.</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-softgray">
+                        <span class="text-xs font-semibold tracking-widest uppercase text-rosegold">Wholesale / Custom</span>
+                        <a href="https://wa.me/923155239697?text=Hello,%20I%20am%20interested%20in%20Taupe%20Lounge%20&%20Tracksuit%20Ensemble%20(gym%2052.jfif)" target="_blank" class="bg-charcoal hover:bg-rosegold text-creme px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors">
+                            Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 20: gym (56).jfif -->
+            <div class="product-card group bg-cardwhite rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-warmbeige transition-all duration-500" data-category="adult">
+                <div class="relative h-96 overflow-hidden bg-softgray">
+                    <img src="gym (56).jfif" alt="Plum Sunset Athletic Skort Fit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x800/E6DFD5/1A1A1A?text=Plum+Skort+Fit'">
+                    <span class="absolute top-4 left-4 bg-charcoal/80 backdrop-blur-md text-creme text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Adult Activewear</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 group-hover:text-rosegold transition-colors">Plum Sunset Athletic Skort Fit</h3>
+                    <p class="text-xs text-charcoal/70 font-light mb-4 line-clamp-2">Deep plum luxury tennis skirt and matching crop top designed for high-end boutique fitness collections.</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-softgray">
+                        <span class="text-xs font-semibold tracking-widest uppercase text-rosegold">Wholesale / Custom</span>
+                        <a href="https://wa.me/923155239697?text=Hello,%20I%20am%20interested%20in%20Plum%20Sunset%20Athletic%20Skort%20Fit%20(gym%2056.jfif)" target="_blank" class="bg-charcoal hover:bg-rosegold text-creme px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors">
+                            Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 21: gym (57).jfif -->
+            <div class="product-card group bg-cardwhite rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-warmbeige transition-all duration-500" data-category="adult">
+                <div class="relative h-96 overflow-hidden bg-softgray">
+                    <img src="gym (57).jfif" alt="Slate Blue Tech-Jogger Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/600x800/E6DFD5/1A1A1A?text=Slate+Blue+Jogger'">
+                    <span class="absolute top-4 left-4 bg-charcoal/80 backdrop-blur-md text-creme text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Adult Activewear</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 group-hover:text-rosegold transition-colors">Slate Blue Tech-Jogger Set</h3>
+                    <p class="text-xs text-charcoal/70 font-light mb-4 line-clamp-2">Lightweight windbreaker jacket and technical jogger pants built for outdoor training and urban athleisure.</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-softgray">
+                        <span class="text-xs font-semibold tracking-widest uppercase text-rosegold">Wholesale / Custom</span>
+                        <a href="https://wa.me/923155239697?text=Hello,%20I%20am%20interested%20in%20Slate%20Blue%20Tech-Jogger%20Set%20(gym%2057.jfif)" target="_blank" class="bg-charcoal hover:bg-rosegold text-creme px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors">
+                            Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-24 bg-warmbeige/30 border-y border-warmbeige">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-rosegold text-xs tracking-[0.3em] uppercase font-semibold block mb-3">Manufacturing Excellence</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight mb-6">About Mir's Core</h2>
+                    <p class="text-charcoal/80 text-base font-light leading-relaxed mb-6">
+                        Based in Sialkot with global export capabilities, **Mir's Core** stands at the pinnacle of luxury activewear manufacturing. We combine cutting-edge technical fabric engineering with master craftsmanship to produce high-end yoga wear, tracksuits, compression sets, and tennis apparel for discerning international brands.
+                    </p>
+                    <p class="text-charcoal/80 text-base font-light leading-relaxed mb-8">
+                        Our state-of-the-art production facility ensures strict quality control, sustainable dyeing processes, and precision stitching that meets the exacting standards of top-tier global retailers.
+                    </p>
+                    <div class="grid grid-cols-3 gap-6 pt-6 border-t border-warmbeige">
+                        <div>
+                            <span class="font-serif text-3xl font-bold text-rosegold block">15+</span>
+                            <span class="text-xs text-charcoal/70 uppercase tracking-wider">Years Experience</span>
+                        </div>
+                        <div>
+                            <span class="font-serif text-3xl font-bold text-rosegold block">50+</span>
+                            <span class="text-xs text-charcoal/70 uppercase tracking-wider">Global Brands Served</span>
+                        </div>
+                        <div>
+                            <span class="font-serif text-3xl font-bold text-rosegold block">100%</span>
+                            <span class="text-xs text-charcoal/70 uppercase tracking-wider">Export Quality</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-cardwhite">
+                        <img src="gym (28).jfif" alt="Mir's Core Factory Floor" class="w-full h-[500px] object-cover" onerror="this.src='https://placehold.co/800x600/E6DFD5/1A1A1A?text=Factory+Manufacturing'">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-charcoal text-creme p-8 rounded-2xl shadow-xl hidden sm:block max-w-xs">
+                        <i class="fa-solid fa-quote-left text-rosegold text-3xl mb-2"></i>
+                        <p class="text-xs font-light italic">"We turn your activewear vision into market-ready luxury collections with unmatched precision."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customization, Sample & MOQ Flexibility Section -->
+    <section id="customization" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-charcoal text-creme rounded-3xl p-8 sm:p-16 relative overflow-hidden shadow-2xl">
+            <!-- Background Decorative Elements -->
+            <div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-rosegold/10 blur-3xl pointer-events-none"></div>
+
+            <div class="relative z-10 max-w-3xl mb-16">
+                <span class="text-rosegold text-xs tracking-[0.3em] uppercase font-semibold block mb-3">Tailored Manufacturing</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight mb-4">Customization, Sample & MOQ Flexibility</h2>
+                <p class="text-warmbeige/80 text-sm sm:text-base font-light">
+                    We empower startup fitness brands and established global enterprises alike with fully customizable production pipelines designed to fit your exact specifications.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+                <!-- Pillar 1 -->
+                <div class="bg-cardwhite/5 border border-creme/10 rounded-2xl p-8 backdrop-blur-sm hover:border-rosegold transition-colors">
+                    <div class="w-14 h-14 rounded-xl bg-rosegold/20 text-rosegold flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-creme">100% Full Customization</h3>
+                    <p class="text-xs text-warmbeige/70 font-light leading-relaxed">
+                        Custom fabric blends (Nylon-Spandex, Ribbed seamless, Brushed fleece), exact Pantone shade matching, custom woven labels, wash care tags, silicone heat-transfer logos, and bespoke hangtags.
+                    </p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="bg-cardwhite/5 border border-creme/10 rounded-2xl p-8 backdrop-blur-sm hover:border-rosegold transition-colors">
+                    <div class="w-14 h-14 rounded-xl bg-rosegold/20 text-rosegold flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-creme">Rapid Sample Availability</h3>
+                    <p class="text-xs text-warmbeige/70 font-light leading-relaxed">
+                        Get your custom physical prototypes and pre-production samples delivered to your doorstep within 5-7 working days via express courier services like DHL and FedEx.
+                    </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="bg-cardwhite/5 border border-creme/10 rounded-2xl p-8 backdrop-blur-sm hover:border-rosegold transition-colors">
+                    <div class="w-14 h-14 rounded-xl bg-rosegold/20 text-rosegold flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-creme">Ultimate MOQ Flexibility</h3>
+                    <p class="text-xs text-warmbeige/70 font-light leading-relaxed">
+                        Low Minimum Order Quantities (MOQs) starting from low units per colorway/style for emerging startups, scaling seamlessly up to tens of thousands of units for global retail chains.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-12 border-t border-creme/10 flex flex-col sm:flex-row items-center justify-between gap-6 relative z-10">
+                <div>
+                    <h4 class="font-serif text-lg font-bold text-cremem mb-1">Ready to start your custom activewear line?</h4>
+                    <p class="text-xs text-warmbeige/70">Connect with our manufacturing consultants on WhatsApp today.</p>
+                </div>
+                <a href="https://wa.me/923155239697?text=Hello%20Mir's%20Core,%20I%20would%20like%20to%20discuss%20custom%20manufacturing%20and%20MOQ%20options." target="_blank" class="bg-rosegold hover:bg-rosegolddark text-white px-8 py-4 rounded-full text-xs font-semibold tracking-widest uppercase transition-all shadow-xl flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Chat With Production Team
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer Section -->
+    <footer id="contact" class="bg-charcoal text-creme pt-20 pb-12 border-t border-warmbeige/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Col 1: Brand Info -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden border border-rosegold bg-charcoal flex items-center justify-center p-1">
+                            <img src="gym (7).jfif" alt="Mir's Core Logo" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/100x100/1A1A1A/C5A059?text=MC'">
+                        </div>
+                        <div>
+                            <span class="font-serif text-2xl font-bold tracking-wider block">MIR'S CORE</span>
+                            <span class="text-[9px] tracking-[0.3em] uppercase text-rosegold font-semibold block">Luxury Activewear</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-warmbeige/70 font-light leading-relaxed mb-6">
+                        Premier B2B activewear manufacturer and global exporter delivering world-class athletic collections from Sialkot to the world.
+                    </p>
+                    <div class="flex items-center space-x-4 text-rosegold text-lg">
+                        <a href="https://wa.me/923155239697" target="_blank" class="w-10 h-10 rounded-full bg-creme/5 hover:bg-rosegold hover:text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="mailto:saleem.mir81509@gmail.com" class="w-10 h-10 rounded-full bg-creme/5 hover:bg-rosegold hover:text-white flex items-center justify-center transition-colors"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-creme/5 hover:bg-rosegold hover:text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-creme/5 hover:bg-rosegold hover:text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="font-serif text-lg font-bold mb-6 text-creme tracking-wide">Quick Links</h4>
+                    <ul class="space-y-3 text-xs uppercase tracking-wider font-medium text-warmbeige/80">
+                        <li><a href="#hero" class="hover:text-rosegold transition-colors">Home</a></li>
+                        <li><a href="#collections" class="hover:text-rosegold transition-colors">Collections</a></li>
+                        <li><a href="#customization" class="hover:text-rosegold transition-colors">Customization & MOQ</a></li>
+                        <li><a href="#about" class="hover:text-rosegold transition-colors">About Us</a></li>
+                        <li><a href="#contact" class="hover:text-rosegold transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Direct Contact -->
+                <div>
+                    <h4 class="font-serif text-lg font-bold mb-6 text-creme tracking-wide">Direct Contact</h4>
+                    <ul class="space-y-4 text-xs text-warmbeige/80">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-rosegold mt-1"></i>
+                            <span>Sialkot, Punjab, Pakistan (Manufacturing Hub)</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-rosegold"></i>
+                            <a href="https://wa.me/923155239697" target="_blank" class="hover:text-rosegold transition-colors">+92 315 5239697</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-rosegold"></i>
+                            <a href="mailto:saleem.mir81509@gmail.com" class="hover:text-rosegold transition-colors">saleem.mir81509@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Inquiry Form -->
+                <div>
+                    <h4 class="font-serif text-lg font-bold mb-6 text-creme tracking-wide">Quick Wholesale Inquiry</h4>
+                    <form onsubmit="handleInquiry(event)" class="space-y-3">
+                        <input type="text" id="inquiry-name" placeholder="Your Name / Brand" required class="w-full bg-creme/5 border border-creme/20 rounded-xl px-4 py-2.5 text-xs text-creme placeholder-warmbeige/40 focus:outline-none focus:border-rosegold">
+                        <input type="email" id="inquiry-email" placeholder="Business Email" required class="w-full bg-creme/5 border border-creme/20 rounded-xl px-4 py-2.5 text-xs text-creme placeholder-warmbeige/40 focus:outline-none focus:border-rosegold">
+                        <textarea id="inquiry-msg" placeholder="Tell us about your activewear requirements..." rows="2" required class="w-full bg-creme/5 border border-creme/20 rounded-xl px-4 py-2.5 text-xs text-creme placeholder-warmbeige/40 focus:outline-none focus:border-rosegold"></textarea>
+                        <button type="submit" class="w-full bg-rosegold hover:bg-rosegolddark text-white py-2.5 rounded-xl text-xs font-semibold tracking-wider uppercase transition-colors shadow-md">
+                            Send via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-8 border-t border-creme/10 text-center flex flex-col sm:flex-row items-center justify-between text-xs text-warmbeige/60">
+                <p>&copy; 2026 Mir's Core. All Rights Reserved. Luxury Activewear Manufacturer & Exporter.</p>
+                <p class="mt-2 sm:mt-0">Crafted with Precision for Global B2B Excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle Mobile Menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Collection Filter Function
+        function filterCollection(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update active button styling
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-charcoal', 'text-creme', 'shadow-md');
+                btn.classList.add('bg-warmbeige/60', 'text-charcoal');
+            });
+            event.target.classList.remove('bg-warmbeige/60', 'text-charcoal');
+            event.target.classList.add('bg-charcoal', 'text-creme', 'shadow-md');
+
+            // Show/Hide Cards
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (category === 'all' || cardCategory === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Quick Inquiry Form Handler via WhatsApp
+        function handleInquiry(e) {
+            e.preventDefault();
+            const name = document.getElementById('inquiry-name').value;
+            const email = document.getElementById('inquiry-email').value;
+            const msg = document.getElementById('inquiry-msg').value;
+
+            const whatsappText = `Hello Mir's Core,%0A%0A*Name/Brand:* ${encodeURIComponent(name)}%0A*Email:* ${encodeURIComponent(email)}%0A*Message:* ${encodeURIComponent(msg)}`;
+            window.open(`https://wa.me/923155239697?text=${whatsappText}`, '_blank');
+        }
+    </script>
 </body>
 </html>
