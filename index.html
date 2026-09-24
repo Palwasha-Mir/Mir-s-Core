@@ -70,9 +70,9 @@
   <header class="fixed top-0 left-0 w-full z-50 bg-cremeBg/90 backdrop-blur-md border-b border-roseGold/20 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       
-      <!-- Brand Logo & Name (Clickable to open Fullscreen Modal) -->
+      <!-- Brand Logo & Name (Square / Rectangular shape so logo text is fully visible without cropping) -->
       <div class="flex items-center gap-3 cursor-pointer group" onclick="openLogoModal()">
-        <img src="gym logo.jpeg" alt="Mir's Core Logo" class="w-12 h-12 rounded-full border-2 border-roseGold object-cover shadow-md group-hover:scale-105 transition">
+        <img src="gym logo.jpeg" alt="Mir's Core Logo" class="w-12 h-12 rounded-xl border border-roseGold/40 object-cover shadow-md group-hover:scale-105 transition bg-white p-0.5">
         <div>
           <span class="text-xl font-bold font-serif tracking-wide text-deepText block leading-none">Mir's Core</span>
           <span class="text-[10px] uppercase tracking-widest text-lightBrown font-semibold">Luxury Activewear B2B</span>
@@ -90,10 +90,10 @@
         <a href="#contact" class="hover:text-roseGold transition">Contact</a>
       </nav>
 
-      <!-- Quick Inquiry / WhatsApp Button -->
+      <!-- Quick Inquiry / WhatsApp Button with highlighted number -->
       <div class="flex items-center gap-4">
-        <a href="https://wa.me/923000000000?text=Hello%20Mir's%20Core,%20I%20am%20interested%20in%20B2B%20activewear%20manufacturing." target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-roseGold to-lightBrown text-white px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase shadow-lg hover:opacity-95 transition">
-          <i class="fa-brands fa-whatsapp text-sm"></i> Quick Inquiry
+        <a href="https://wa.me/923155239697?text=Hello%20Mir's%20Core,%20I%20am%20interested%20in%20B2B%20activewear%20manufacturing." target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-roseGold to-lightBrown text-white px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase shadow-lg hover:opacity-95 transition">
+          <i class="fa-brands fa-whatsapp text-sm"></i> +92 315 5239697
         </a>
         <!-- Mobile Menu Toggle -->
         <button onclick="toggleMobileMenu()" class="md:hidden text-deepText text-2xl focus:outline-none">
@@ -134,7 +134,7 @@
           <a href="#collections" class="bg-gradient-to-r from-roseGold to-lightBrown text-white px-8 py-3.5 rounded-full font-semibold text-sm tracking-wider uppercase shadow-xl hover:opacity-95 transition">
             Explore Collections
           </a>
-          <a href="https://wa.me/923000000000?text=Hello%20Mir's%20Core,%20I%20would%20like%20to%20request%20a%20B2B%20WhatsApp%20Quote." target="_blank" class="bg-cardWhite border border-roseGold/40 text-deepText px-8 py-3.5 rounded-full font-semibold text-sm tracking-wider uppercase shadow-md hover:bg-roseGold/5 transition flex items-center gap-2">
+          <a href="https://wa.me/923155239697?text=Hello%20Mir's%20Core,%20I%20would%20like%20to%20request%20a%20B2B%20WhatsApp%20Quote." target="_blank" class="bg-cardWhite border border-roseGold/40 text-deepText px-8 py-3.5 rounded-full font-semibold text-sm tracking-wider uppercase shadow-md hover:bg-roseGold/5 transition flex items-center gap-2">
             <i class="fa-brands fa-whatsapp text-roseGold"></i> B2B WhatsApp Quote
           </a>
         </div>
@@ -375,7 +375,7 @@
           <li class="flex items-center gap-3"><i class="fa-solid fa-check text-roseGold"></i> Ergonomic contour seams for superior fit</li>
         </ul>
         <div>
-          <a href="https://wa.me/923000000000?text=Hello,%20I%20want%20to%20order%20Adult%20Line%20Samples." target="_blank" class="inline-block bg-roseGold text-white px-7 py-3 rounded-full text-xs font-semibold uppercase tracking-wider shadow-md hover:opacity-95 transition">
+          <a href="https://wa.me/923155239697?text=Hello,%20I%20want%20to%20order%20Adult%20Line%20Samples." target="_blank" class="inline-block bg-roseGold text-white px-7 py-3 rounded-full text-xs font-semibold uppercase tracking-wider shadow-md hover:opacity-95 transition">
             Request Adult Line Catalog
           </a>
         </div>
@@ -405,7 +405,7 @@
           <li class="flex items-center gap-3"><i class="fa-solid fa-check text-roseGold"></i> Custom color palettes & matching team sets</li>
         </ul>
         <div>
-          <a href="https://wa.me/923000000000?text=Hello,%20I%20want%20to%20order%20Kids%20Gymnastics%20Line%20Samples." target="_blank" class="inline-block bg-roseGold text-white px-7 py-3 rounded-full text-xs font-semibold uppercase tracking-wider shadow-md hover:opacity-95 transition">
+          <a href="https://wa.me/923155239697?text=Hello,%20I%20want%20to%20order%20Kids%20Gymnastics%20Line%20Samples." target="_blank" class="inline-block bg-roseGold text-white px-7 py-3 rounded-full text-xs font-semibold uppercase tracking-wider shadow-md hover:opacity-95 transition">
             Request Kids & Gymnastics Catalog
           </a>
         </div>
@@ -466,14 +466,14 @@
             <div class="w-10 h-10 rounded-full bg-roseGold/10 flex items-center justify-center text-roseGold"><i class="fa-solid fa-envelope"></i></div>
             <div>
               <span class="text-xs text-mutedText block">Email Us</span>
-              <span class="text-sm font-semibold text-deepText">mirscoreactive@gmail.com</span>
+              <a href="mailto:saleem.mir81509@gmail.com" class="text-sm font-semibold text-deepText hover:text-roseGold">saleem.mir81509@gmail.com</a>
             </div>
           </div>
           <div class="flex items-center gap-4">
             <div class="w-10 h-10 rounded-full bg-roseGold/10 flex items-center justify-center text-roseGold"><i class="fa-brands fa-whatsapp"></i></div>
             <div>
               <span class="text-xs text-mutedText block">WhatsApp B2B Support</span>
-              <span class="text-sm font-semibold text-deepText">+92 320 0447333</span>
+              <a href="https://wa.me/923155239697" target="_blank" class="text-sm font-semibold text-deepText hover:text-roseGold">+92 315 5239697</a>
             </div>
           </div>
           <div class="flex items-center gap-4">
@@ -514,7 +514,7 @@
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
       <div class="space-y-3">
         <div class="flex items-center gap-3 cursor-pointer" onclick="openLogoModal()">
-          <img src="gym logo.jpeg" alt="Logo" class="w-10 h-10 rounded-full border border-roseGold object-cover">
+          <img src="gym logo.jpeg" alt="Logo" class="w-10 h-10 rounded-xl border border-roseGold object-cover bg-white p-0.5">
           <span class="text-lg font-serif font-bold text-cardWhite">Mir's Core</span>
         </div>
         <p class="text-xs text-gray-300 leading-relaxed">
@@ -543,7 +543,7 @@
         <p class="text-xs text-gray-300 leading-relaxed mb-3">
           Seamless international shipping via air and ocean freight with complete custom private labeling.
         </p>
-        <a href="https://wa.me/923200447333" target="_blank" class="inline-flex items-center gap-2 bg-roseGold text-white px-4 py-2 rounded-full text-xs font-semibold uppercase">
+        <a href="https://wa.me/923155239697" target="_blank" class="inline-flex items-center gap-2 bg-roseGold text-white px-4 py-2 rounded-full text-xs font-semibold uppercase">
           <i class="fa-brands fa-whatsapp"></i> WhatsApp Chat
         </a>
       </div>
@@ -553,13 +553,13 @@
     </div>
   </footer>
 
-  <!-- ==================== FULLSCREEN LOGO MODAL ==================== -->
+  <!-- ==================== FULLSCREEN LOGO MODAL (Square / Rectangular with Rounded-2xl to prevent text clipping) ==================== -->
   <div id="logoModal" class="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-md hidden items-center justify-center p-4" onclick="closeLogoModal()">
-    <div class="relative max-w-lg w-full flex flex-col items-center" onclick="event.stopPropagation()">
-      <button onclick="closeLogoModal()" class="absolute -top-12 right-0 text-white text-3xl font-bold hover:text-roseGold transition">&times;</button>
-      <img src="gym logo.jpeg" alt="Full Logo" class="w-64 h-64 rounded-full border-4 border-roseGold object-cover shadow-2xl">
-      <h3 class="text-white text-2xl font-serif font-bold mt-4">Mir's Core Luxury Activewear</h3>
-      <p class="text-xs uppercase tracking-widest text-accentGold mt-1">B2B Custom Manufacturer & Global Supplier</p>
+    <div class="relative max-w-lg w-full flex flex-col items-center bg-cardWhite p-8 rounded-2xl shadow-2xl border border-warmBeige" onclick="event.stopPropagation()">
+      <button onclick="closeLogoModal()" class="absolute top-4 right-4 text-deepText text-2xl font-bold hover:text-roseGold transition">&times;</button>
+      <img src="gym logo.jpeg" alt="Full Logo" class="w-56 h-56 rounded-xl border-2 border-roseGold object-cover shadow-lg bg-white p-1">
+      <h3 class="text-deepText text-2xl font-serif font-bold mt-6">Mir's Core Luxury Activewear</h3>
+      <p class="text-xs uppercase tracking-widest text-roseGold font-semibold mt-1">B2B Custom Manufacturer & Global Supplier</p>
     </div>
   </div>
 
@@ -606,7 +606,7 @@
       document.getElementById('qvImg').src = imgSrc;
       document.getElementById('qvTitle').innerText = title;
       document.getElementById('qvDesc').innerText = desc;
-      const waUrl = `https://wa.me/923200447333?text=Hello%20Mir's%20Core,%20I%20am%20interested%20in%20inquiring%20about:%20${encodeURIComponent(title)}`;
+      const waUrl = `https://wa.me/923155239697?text=Hello%20Mir's%20Core,%20I%20am%20interested%20in%20inquiring%20about:%20${encodeURIComponent(title)}`;
       document.getElementById('qvWhatsApp').href = waUrl;
       
       const modal = document.getElementById('quickViewModal');
