@@ -818,3 +818,135 @@
     </script>
 </body>
 </html>
+<!-- === UPDATED STYLES FOR COLOR COMBINATION & LOGO MODAL === -->
+<style>
+  :root {
+    --bg-primary: #1c1816;      /* Rich warm deep charcoal-brown for luxury contrast */
+    --bg-secondary: #241f1c;    
+    --accent-gold: #d4af37;     /* Rose Gold / Metallic Gold */
+    --accent-rose: #e6caae;     /* Creme / Rose Beige */
+    --accent-beige: #c8b6a6;    /* Warm Beige */
+    --light-brown: #a48875;     /* Soft Light Brown */
+    --text-light: #fdfbf7;      /* Creme White */
+    --text-muted: #d0c5b4;
+  }
+
+  body {
+    background: linear-gradient(135deg, var(--bg-primary) 0%, #2a2320 50%, #1c1816 100%) !important;
+    color: var(--text-light) !important;
+  }
+
+  /* Navigation Bar Luxury Restyling */
+  nav.luxury-nav {
+    background: rgba(28, 24, 22, 0.85) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  }
+
+  /* Logo Styling & Clickable Pointer */
+  .brand-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .brand-logo-container:hover {
+    transform: scale(1.03);
+  }
+  .brand-logo-container img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-gold);
+    object-fit: cover;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  }
+
+  /* Fullscreen Logo Modal Styling */
+  #logoModal {
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+    animation: fadeInModal 0.3s ease;
+  }
+  #logoModal img {
+    max-width: 90%;
+    max-height: 85vh;
+    border: 3px solid var(--accent-gold);
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+    animation: scaleUpModal 0.3s ease;
+  }
+  #logoModal .close-modal {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: var(--accent-gold);
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  #logoModal .close-modal:hover {
+    color: var(--text-light);
+  }
+
+  @keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes scaleUpModal {
+    from { transform: scale(0.8); }
+    to { transform: scale(1); }
+  }
+</style>
+
+<!-- === HEADER / NAVBAR WITH CLICKABLE LOGO === -->
+<nav class="luxury-nav fixed top-0 left-0 w-full z-50 px-6 py-4 flex justify-between items-center shadow-lg">
+  <!-- Logo with click event to open fullscreen modal -->
+  <div class="brand-logo-container" onclick="openLogoModal()">
+    <img src="gym logo.jpeg" alt="Mir's Core Logo">
+    <div>
+      <h1 class="text-xl font-bold tracking-wider" style="color: #d4af37; font-family: 'Playfair Display', serif;">Mir's Core</h1>
+      <span class="text-xs uppercase tracking-widest" style="color: #c8b6a6;">Luxury Activewear B2B</span>
+    </div>
+  </div>
+
+  <!-- Navigation Links / Menu items can go here -->
+  <div class="hidden md:flex items-center space-x-8 text-sm tracking-widest" style="color: #d0c5b4;">
+    <a href="#home" class="hover:text-[#d4af37] transition">Home</a>
+    <a href="#adults" class="hover:text-[#d4af37] transition">Adult Line</a>
+    <a href="#kids" class="hover:text-[#d4af37] transition">Kids Line</a>
+    <a href="#customization" class="hover:text-[#d4af37] transition">Customization</a>
+    <a href="#contact" class="hover:text-[#d4af37] transition">Contact</a>
+  </div>
+</nav>
+
+<!-- === FULLSCREEN LOGO MODAL HTML === -->
+<div id="logoModal" onclick="closeLogoModal()">
+  <span class="close-modal">&times;</span>
+  <img id="modalLogoImg" src="gym logo.jpeg" alt="Mir's Core Full Logo">
+</div>
+
+<!-- === JAVASCRIPT FOR LOGO MODAL === -->
+<script>
+  function openLogoModal() {
+    const modal = document.getElementById('logoModal');
+    const modalImg = document.getElementById('modalLogoImg');
+    modal.style.display = 'flex';
+    modalImg.src = 'gym logo.jpeg';
+  }
+
+  function closeLogoModal() {
+    document.getElementById('logoModal').style.display = 'none';
+  }
+</script>
