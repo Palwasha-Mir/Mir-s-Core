@@ -817,3 +817,53 @@
         });
     </script>
 </body>
+<style>
+  :root {
+    /* Aapke bataye hue exact luxury colors */
+    --bg-primary: #f5f1eb;      /* Soft Luxury Creme / Beige Background */
+    --bg-secondary: #eae3db;    /* Warm Light Beige for cards */
+    --bg-card: #ffffff;         /* Clean White for product cards */
+    --accent-rose-gold: #b76e79;/* Rose Gold Accent */
+    --accent-gold: #c5a880;     /* Warm Metallic Gold */
+    --light-brown: #a48875;     /* Light Brown */
+    --beige-tone: #d8ccc4;      /* Beige */
+    --gray-tone: #8c857b;       /* Soft Luxury Gray */
+    --text-dark: #2c2623;       /* Rich dark brown/gray for sharp readable text */
+    --text-muted: #6e655f;      /* Muted text */
+  }
+
+  body {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-dark) !important;
+    font-family: 'Playfair Display', serif, sans-serif;
+  }
+
+  /* Navigation Bar - Creme & Rose Gold Luxury Theme */
+  nav.luxury-nav {
+    background: rgba(245, 241, 235, 0.9) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(183, 110, 121, 0.2);
+  }
+
+  /* Product Cards - White & Beige Fusion */
+  .luxury-card {
+    background: var(--bg-card);
+    border: 1px solid var(--beige-tone);
+    box-shadow: 0 10px 30px rgba(164, 136, 117, 0.08);
+    transition: all 0.3s ease;
+  }
+  .luxury-card:hover {
+    border-color: var(--accent-rose-gold);
+    box-shadow: 0 15px 35px rgba(183, 110, 121, 0.15);
+  }
+
+  /* Buttons - Rose Gold & Light Brown */
+  .btn-rose-gold {
+    background: linear-gradient(135deg, #b76e79 0%, #a48875 100%);
+    color: #ffffff;
+    transition: opacity 0.3s ease;
+  }
+  .btn-rose-gold:hover {
+    opacity: 0.9;
+  }
+</style>
