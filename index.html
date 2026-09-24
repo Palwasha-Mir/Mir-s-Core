@@ -55,6 +55,13 @@
       background: #b76e79;
       border-radius: 4px;
     }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
   </style>
 </head>
 <body class="bg-cremeBg text-deepText antialiased selection:bg-roseGold selection:text-white">
@@ -78,7 +85,7 @@
         <a href="#global-b2b" class="hover:text-roseGold transition">Global B2B</a>
         <a href="#collections" class="hover:text-roseGold transition">Collections</a>
         <a href="#adults" class="hover:text-roseGold transition">Adult Line</a>
-        <a href="#kids" class="hover:text-roseGold transition">Kids Line</a>
+        <a href="#kids" class="hover:text-roseGold transition">Kids & Gymnastics</a>
         <a href="#customization" class="hover:text-roseGold transition">Customization</a>
         <a href="#contact" class="hover:text-roseGold transition">Contact</a>
       </nav>
@@ -102,7 +109,7 @@
       <a href="#global-b2b" onclick="toggleMobileMenu()" class="block text-sm font-medium text-deepText hover:text-roseGold">Global B2B</a>
       <a href="#collections" onclick="toggleMobileMenu()" class="block text-sm font-medium text-deepText hover:text-roseGold">Collections</a>
       <a href="#adults" onclick="toggleMobileMenu()" class="block text-sm font-medium text-deepText hover:text-roseGold">Adult Line</a>
-      <a href="#kids" onclick="toggleMobileMenu()" class="block text-sm font-medium text-deepText hover:text-roseGold">Kids Line</a>
+      <a href="#kids" onclick="toggleMobileMenu()" class="block text-sm font-medium text-deepText hover:text-roseGold">Kids & Gymnastics</a>
       <a href="#customization" onclick="toggleMobileMenu()" class="block text-sm font-medium text-deepText hover:text-roseGold">Customization</a>
       <a href="#contact" onclick="toggleMobileMenu()" class="block text-sm font-medium text-deepText hover:text-roseGold">Contact</a>
     </div>
@@ -113,7 +120,7 @@
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       
       <!-- Hero Text Content -->
-      <div class="lg:col-span-7 space-y-6">
+      <div class="lg:col-span-7 space-y-6 animate-fade-in">
         <div class="inline-flex items-center gap-2 bg-cardWhite border border-roseGold/30 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest text-lightBrown shadow-sm">
           <i class="fa-solid fa-globe text-roseGold"></i> Global B2B Manufacturer & Supplier
         </div>
@@ -133,8 +140,8 @@
         </div>
       </div>
 
-      <!-- Hero Featured Image / Card (Using gym (40)_2.jfif or header image) -->
-      <div class="lg:col-span-5 relative">
+      <!-- Hero Featured Image -->
+      <div class="lg:col-span-5 relative animate-fade-in">
         <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-cardWhite group">
           <img src="gym (40)_2.jfif" alt="Mir's Core Luxury Activewear Showcase" class="w-full h-[420px] object-cover group-hover:scale-105 transition duration-500">
           <div class="absolute inset-0 bg-gradient-to-t from-deepText/60 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
@@ -199,14 +206,14 @@
       <div class="flex flex-wrap justify-center gap-3 pt-6">
         <button onclick="filterSelection('all')" class="filter-btn active-filter bg-roseGold text-white px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition">All Collections</button>
         <button onclick="filterSelection('adult')" class="filter-btn bg-cardWhite border border-warmBeige text-deepText px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-wider hover:border-roseGold transition">Adult Line</button>
-        <button onclick="filterSelection('kids')" class="filter-btn bg-cardWhite border border-warmBeige text-deepText px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-wider hover:border-roseGold transition">Kids Line</button>
+        <button onclick="filterSelection('kids')" class="filter-btn bg-cardWhite border border-warmBeige text-deepText px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-wider hover:border-roseGold transition">Kids & Gymnastics</button>
       </div>
     </div>
 
-    <!-- Gallery Grid with All Images (Including newly added ones) -->
+    <!-- Gallery Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="image-gallery">
       
-      <!-- Item 1: Adult Luxury Set -->
+      <!-- Item 1 -->
       <div class="collection-card adult bg-cardWhite rounded-2xl overflow-hidden border border-warmBeige shadow-sm hover:shadow-xl transition group" data-category="adult">
         <div class="relative h-80 overflow-hidden cursor-pointer" onclick="openQuickView('gym (34).jfif', 'Luxury Warm Beige Activewear Set', 'Adult Line - High performance compression fabric with tailored zip jacket and matching bottoms.')">
           <img src="gym (34).jfif" alt="Luxury Warm Beige Activewear Set" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -222,11 +229,11 @@
         </div>
       </div>
 
-      <!-- Item 2: Kids Line Group / Performance -->
+      <!-- Item 2 -->
       <div class="collection-card kids bg-cardWhite rounded-2xl overflow-hidden border border-warmBeige shadow-sm hover:shadow-xl transition group" data-category="kids">
         <div class="relative h-80 overflow-hidden cursor-pointer" onclick="openQuickView('gym (40)_2.jfif', 'Junior Athletic & Dance Ensemble', 'Kids Line - Flexible, breathable stretch wear designed for active young performers and gymnasts.')">
           <img src="gym (40)_2.jfif" alt="Junior Athletic & Dance Ensemble" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute top-4 right-4 bg-cremeBg/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest text-roseGold">Kids Line</div>
+          <div class="absolute top-4 right-4 bg-cremeBg/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest text-roseGold">Kids & Gymnastics</div>
         </div>
         <div class="p-6 space-y-3">
           <h3 class="font-serif font-bold text-lg text-deepText">Junior Athletic & Dance Ensemble</h3>
@@ -238,11 +245,11 @@
         </div>
       </div>
 
-      <!-- Item 3: Kids Line Skirt & Top -->
+      <!-- Item 3 -->
       <div class="collection-card kids bg-cardWhite rounded-2xl overflow-hidden border border-warmBeige shadow-sm hover:shadow-xl transition group" data-category="kids">
         <div class="relative h-80 overflow-hidden cursor-pointer" onclick="openQuickView('gym (49)_2.jfif', 'Girls Ruffled Active Skirt Set', 'Kids Line - Elegant tiered ruffle skirt paired with a breathable crop top for young athletes.')">
           <img src="gym (49)_2.jfif" alt="Girls Ruffled Active Skirt Set" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute top-4 right-4 bg-cremeBg/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest text-roseGold">Kids Line</div>
+          <div class="absolute top-4 right-4 bg-cremeBg/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest text-roseGold">Kids & Gymnastics</div>
         </div>
         <div class="p-6 space-y-3">
           <h3 class="font-serif font-bold text-lg text-deepText">Girls Ruffled Active Skirt Set</h3>
@@ -254,7 +261,7 @@
         </div>
       </div>
 
-      <!-- Item 4: Adult Pure White Set -->
+      <!-- Item 4 -->
       <div class="collection-card adult bg-cardWhite rounded-2xl overflow-hidden border border-warmBeige shadow-sm hover:shadow-xl transition group" data-category="adult">
         <div class="relative h-80 overflow-hidden cursor-pointer" onclick="openQuickView('gym (50)_2.jfif', 'Pure White Elite Gym Set', 'Adult Line - Premium moisture-wicking sports bra and high-waisted leggings in immaculate white.')">
           <img src="gym (50)_2.jfif" alt="Pure White Elite Gym Set" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -270,11 +277,11 @@
         </div>
       </div>
 
-      <!-- Item 5: Kids Jogger & Jacket -->
+      <!-- Item 5 -->
       <div class="collection-card kids bg-cardWhite rounded-2xl overflow-hidden border border-warmBeige shadow-sm hover:shadow-xl transition group" data-category="kids">
         <div class="relative h-80 overflow-hidden cursor-pointer" onclick="openQuickView('gym (52)_2.jfif', 'Junior Luxury Warm-Up Tracksuit', 'Kids Line - Lightweight translucent jacket and comfortable joggers for youth athletes.')">
           <img src="gym (52)_2.jfif" alt="Junior Luxury Warm-Up Tracksuit" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute top-4 right-4 bg-cremeBg/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest text-roseGold">Kids Line</div>
+          <div class="absolute top-4 right-4 bg-cremeBg/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest text-roseGold">Kids & Gymnastics</div>
         </div>
         <div class="p-6 space-y-3">
           <h3 class="font-serif font-bold text-lg text-deepText">Junior Luxury Warm-Up Tracksuit</h3>
@@ -286,7 +293,7 @@
         </div>
       </div>
 
-      <!-- Item 6: Adult Mauve Ruffle Skirt -->
+      <!-- Item 6 -->
       <div class="collection-card adult bg-cardWhite rounded-2xl overflow-hidden border border-warmBeige shadow-sm hover:shadow-xl transition group" data-category="adult">
         <div class="relative h-80 overflow-hidden cursor-pointer" onclick="openQuickView('gym (56)_2.jfif', 'Signature Mauve Active Skirt', 'Adult Line - Chic tiered athletic skirt with built-in compression shorts for tennis and training.')">
           <img src="gym (56)_2.jfif" alt="Signature Mauve Active Skirt" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -302,11 +309,11 @@
         </div>
       </div>
 
-      <!-- Item 7: Kids Ribbed Set -->
+      <!-- Item 7 -->
       <div class="collection-card kids bg-cardWhite rounded-2xl overflow-hidden border border-warmBeige shadow-sm hover:shadow-xl transition group" data-category="kids">
         <div class="relative h-80 overflow-hidden cursor-pointer" onclick="openQuickView('gym (57)_2.jfif', 'Junior Ribbed Seamless Set', 'Kids Line - Comfortable ribbed texture crop top and matching leggings with waist tie detail.')">
           <img src="gym (57)_2.jfif" alt="Junior Ribbed Seamless Set" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute top-4 right-4 bg-cremeBg/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest text-roseGold">Kids Line</div>
+          <div class="absolute top-4 right-4 bg-cremeBg/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest text-roseGold">Kids & Gymnastics</div>
         </div>
         <div class="p-6 space-y-3">
           <h3 class="font-serif font-bold text-lg text-deepText">Junior Ribbed Seamless Set</h3>
@@ -318,7 +325,7 @@
         </div>
       </div>
 
-      <!-- Additional standard collection items to ensure robust gallery -->
+      <!-- Item 8 -->
       <div class="collection-card adult bg-cardWhite rounded-2xl overflow-hidden border border-warmBeige shadow-sm hover:shadow-xl transition group" data-category="adult">
         <div class="relative h-80 overflow-hidden cursor-pointer" onclick="openQuickView('gym (43).jfif', 'Advanced Compression Gym Set', 'Adult Line - Engineered for maximum durability, stretch, and moisture control during rigorous workouts.')">
           <img src="gym (43).jfif" alt="Advanced Compression Gym Set" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -334,10 +341,11 @@
         </div>
       </div>
 
+      <!-- Item 9 -->
       <div class="collection-card kids bg-cardWhite rounded-2xl overflow-hidden border border-warmBeige shadow-sm hover:shadow-xl transition group" data-category="kids">
         <div class="relative h-80 overflow-hidden cursor-pointer" onclick="openQuickView('gym (44).jfif', 'Junior Gymnastics Leotard', 'Kids Line - Form-fitting, ultra-flexible gymnastics dress designed for ultimate freedom of movement.')">
           <img src="gym (44).jfif" alt="Junior Gymnastics Leotard" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          <div class="absolute top-4 right-4 bg-cremeBg/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest text-roseGold">Kids Line</div>
+          <div class="absolute top-4 right-4 bg-cremeBg/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest text-roseGold">Kids & Gymnastics</div>
         </div>
         <div class="p-6 space-y-3">
           <h3 class="font-serif font-bold text-lg text-deepText">Junior Gymnastics Leotard</h3>
@@ -389,7 +397,7 @@
         <span class="text-xs uppercase tracking-widest text-roseGold font-semibold">Kids & Gymnastics Line</span>
         <h2 class="text-3xl font-serif font-bold text-deepText">Youth Activewear & Gymnastics Dresses</h2>
         <p class="text-mutedText text-sm leading-relaxed">
-          Designed specifically for junior athletes and young dancers. Our kids line prioritizes ultra-soft cotton blends, skin-friendly dyes, and extreme flexibility to accommodate rigorous routines and tumbling.
+          Designed specifically for junior athletes and young dancers. Our kids and gymnastics line prioritizes ultra-soft cotton blends, skin-friendly dyes, and extreme flexibility to accommodate rigorous routines and tumbling.
         </p>
         <ul class="space-y-3 text-sm text-deepText font-medium">
           <li class="flex items-center gap-3"><i class="fa-solid fa-check text-roseGold"></i> Hypoallergenic, breathable child-safe fabrics</li>
@@ -397,8 +405,8 @@
           <li class="flex items-center gap-3"><i class="fa-solid fa-check text-roseGold"></i> Custom color palettes & matching team sets</li>
         </ul>
         <div>
-          <a href="https://wa.me/923000000000?text=Hello,%20I%20want%20to%20order%20Kids%20Line%20Samples." target="_blank" class="inline-block bg-roseGold text-white px-7 py-3 rounded-full text-xs font-semibold uppercase tracking-wider shadow-md hover:opacity-95 transition">
-            Request Kids Line Catalog
+          <a href="https://wa.me/923000000000?text=Hello,%20I%20want%20to%20order%20Kids%20Gymnastics%20Line%20Samples." target="_blank" class="inline-block bg-roseGold text-white px-7 py-3 rounded-full text-xs font-semibold uppercase tracking-wider shadow-md hover:opacity-95 transition">
+            Request Kids & Gymnastics Catalog
           </a>
         </div>
       </div>
@@ -458,14 +466,14 @@
             <div class="w-10 h-10 rounded-full bg-roseGold/10 flex items-center justify-center text-roseGold"><i class="fa-solid fa-envelope"></i></div>
             <div>
               <span class="text-xs text-mutedText block">Email Us</span>
-              <span class="text-sm font-semibold text-deepText">contact@mirscoreactive.com</span>
+              <span class="text-sm font-semibold text-deepText">mirscoreactive@gmail.com</span>
             </div>
           </div>
           <div class="flex items-center gap-4">
             <div class="w-10 h-10 rounded-full bg-roseGold/10 flex items-center justify-center text-roseGold"><i class="fa-brands fa-whatsapp"></i></div>
             <div>
               <span class="text-xs text-mutedText block">WhatsApp B2B Support</span>
-              <span class="text-sm font-semibold text-deepText">+92 300 0000000</span>
+              <span class="text-sm font-semibold text-deepText">+92 320 0447333</span>
             </div>
           </div>
           <div class="flex items-center gap-4">
@@ -526,7 +534,7 @@
         <h4 class="text-sm font-semibold uppercase tracking-wider text-accentGold mb-3">Collections</h4>
         <ul class="space-y-2 text-xs text-gray-300">
           <li><a href="#adults" class="hover:text-roseGold transition">Adult Line (Men & Women)</a></li>
-          <li><a href="#kids" class="hover:text-roseGold transition">Kids Line & Gymnastics</a></li>
+          <li><a href="#kids" class="hover:text-roseGold transition">Kids & Gymnastics Line</a></li>
           <li><a href="#collections" class="hover:text-roseGold transition">Custom Sets & Tracksuits</a></li>
         </ul>
       </div>
@@ -535,8 +543,8 @@
         <p class="text-xs text-gray-300 leading-relaxed mb-3">
           Seamless international shipping via air and ocean freight with complete custom private labeling.
         </p>
-        <a href="https://wa.me/923000000000" target="_blank" class="inline-flex items-center gap-2 bg-roseGold text-white px-4 py-2 rounded-full text-xs font-semibold uppercase">
-          <i class="fa-brands fa-whatsapp">></i> WhatsApp Chat
+        <a href="https://wa.me/923200447333" target="_blank" class="inline-flex items-center gap-2 bg-roseGold text-white px-4 py-2 rounded-full text-xs font-semibold uppercase">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp Chat
         </a>
       </div>
     </div>
@@ -598,7 +606,7 @@
       document.getElementById('qvImg').src = imgSrc;
       document.getElementById('qvTitle').innerText = title;
       document.getElementById('qvDesc').innerText = desc;
-      const waUrl = `https://wa.me/923000000000?text=Hello%20Mir's%20Core,%20I%20am%20interested%20in%20inquiring%20about:%20${encodeURIComponent(title)}`;
+      const waUrl = `https://wa.me/923200447333?text=Hello%20Mir's%20Core,%20I%20am%20interested%20in%20inquiring%20about:%20${encodeURIComponent(title)}`;
       document.getElementById('qvWhatsApp').href = waUrl;
       
       const modal = document.getElementById('quickViewModal');
